@@ -53,6 +53,8 @@ class LanguageFilter(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         if tag in VOID:
+            if "data-src-only" in dict(attrs):  # noindex on the unbuilt sources only
+                return
             if not self.skipping and not self.other_language(tag, attrs):
                 self.emit(self.start_tag_text(tag, attrs))
             return
