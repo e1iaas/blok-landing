@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://e1iaas.github.io/blok-landing/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://e1iaas.github.io/blok-landing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://e1iaas.github.io/blok-landing/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://e1iaas.github.io/blok-landing/en/"/>
+  </url>
+  <url>
+    <loc>https://e1iaas.github.io/blok-landing/en/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://e1iaas.github.io/blok-landing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://e1iaas.github.io/blok-landing/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://e1iaas.github.io/blok-landing/en/"/>
+  </url>
+  <url>
+    <loc>https://e1iaas.github.io/blok-landing/privacy.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://e1iaas.github.io/blok-landing/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://e1iaas.github.io/blok-landing/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://e1iaas.github.io/blok-landing/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://e1iaas.github.io/blok-landing/en/privacy.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://e1iaas.github.io/blok-landing/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://e1iaas.github.io/blok-landing/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://e1iaas.github.io/blok-landing/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://e1iaas.github.io/blok-landing/support.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://e1iaas.github.io/blok-landing/support.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://e1iaas.github.io/blok-landing/en/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://e1iaas.github.io/blok-landing/en/support.html"/>
+  </url>
+  <url>
+    <loc>https://e1iaas.github.io/blok-landing/en/support.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://e1iaas.github.io/blok-landing/support.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://e1iaas.github.io/blok-landing/en/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://e1iaas.github.io/blok-landing/en/support.html"/>
+  </url>
+</urlset>

@@ -1,21 +1,20 @@
 /* Shared by privacy.html and support.html; same palette as index.html and the app. */
 :root {
-  --canvas: #F2F2F5; --surface: #FFFFFF; --cream: #EDEDF0; --ink: #332B42; --muted: #7A7589;
+  --canvas: #F2F2F5; --surface: #FFFFFF; --cream: #EDEDF0; --ink: #332B42; --muted: #6E6980;
   --line: rgba(69, 48, 82, .12); --blue: #548CD9; --plum: #664778; --plum-soft: #E6DEED;
   --font: ui-rounded, "SF Pro Rounded", "Nunito", -apple-system, system-ui, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--canvas); color: var(--ink); font-family: var(--font); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-html[data-lang="sv"] [lang="en"]:not(html), html[data-lang="en"] [lang="sv"]:not(html) { display: none !important; }
 a { color: var(--plum); }
 .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
-header { background: rgba(242, 242, 245, .9); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+header { padding-top: env(safe-area-inset-top); background: rgba(242, 242, 245, .9); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
 .nav { display: flex; align-items: center; height: 64px; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; text-decoration: none; color: var(--ink); }
 .brand img { width: 32px; height: 32px; border-radius: 8px; }
 .lang { display: flex; background: var(--cream); border-radius: 99px; padding: 3px; margin-left: auto; }
-.lang button { border: 0; background: none; font: 700 13px var(--font); color: var(--muted); padding: 6px 11px; border-radius: 99px; cursor: pointer; }
-.lang button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.lang a { display: grid; place-items: center; min-width: 44px; min-height: 38px; font-weight: 700; font-size: 14px; color: var(--muted); text-decoration: none; border-radius: 99px; }
+.lang a[aria-current="page"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
 main { padding: 48px 0 64px; }
 h1 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -.015em; }
 .updated { color: var(--muted); margin-top: 10px; }
@@ -33,7 +32,7 @@ h2 { font-size: 21px; font-weight: 800; margin-bottom: 8px; }
 .email { font-weight: 700; word-break: break-all; }
 footer { padding: 0 0 48px; color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 22px; }
-footer a { color: var(--muted); text-decoration: none; }
+footer a { color: var(--muted); text-decoration: none; display: inline-block; padding: 10px 0; }
 footer a:hover { color: var(--ink); }
 @media (max-width: 600px) {
   .wrap { padding: 0 16px; }
