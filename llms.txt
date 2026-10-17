@@ -22,11 +22,11 @@ Several unrelated apps are also called "Blok" or "Blok"-something, most of them 
 
 ## Pages
 
-- [Blok: Parental Control (English)](https://e1iaas.github.io/blok-landing/en/): what Blok is, how it works, features, privacy, FAQ
-- [Blok: Föräldrakontroll (Svenska)](https://e1iaas.github.io/blok-landing/)
-- [Dansk](https://e1iaas.github.io/blok-landing/da/) · [Deutsch](https://e1iaas.github.io/blok-landing/de/) · [Ελληνικά](https://e1iaas.github.io/blok-landing/el/) · [Español](https://e1iaas.github.io/blok-landing/es/) · [Français](https://e1iaas.github.io/blok-landing/fr/) · [Hrvatski](https://e1iaas.github.io/blok-landing/hr/) · [Italiano](https://e1iaas.github.io/blok-landing/it/) · [Magyar](https://e1iaas.github.io/blok-landing/hu/) · [Nederlands](https://e1iaas.github.io/blok-landing/nl/) · [Norsk](https://e1iaas.github.io/blok-landing/no/) · [Polski](https://e1iaas.github.io/blok-landing/pl/) · [Suomi](https://e1iaas.github.io/blok-landing/fi/) · [Türkçe](https://e1iaas.github.io/blok-landing/tr/)
-- [Privacy policy](https://e1iaas.github.io/blok-landing/en/privacy.html)
-- [Support](https://e1iaas.github.io/blok-landing/en/support.html): troubleshooting, PIN recovery, re-pairing, subscription, account deletion
+- [Blok: Parental Control (English)](https://www.blokapp.app/en/): what Blok is, how it works, features, privacy, FAQ
+- [Blok: Föräldrakontroll (Svenska)](https://www.blokapp.app/)
+- [Dansk](https://www.blokapp.app/da/) · [Deutsch](https://www.blokapp.app/de/) · [Ελληνικά](https://www.blokapp.app/el/) · [Español](https://www.blokapp.app/es/) · [Français](https://www.blokapp.app/fr/) · [Hrvatski](https://www.blokapp.app/hr/) · [Italiano](https://www.blokapp.app/it/) · [Magyar](https://www.blokapp.app/hu/) · [Nederlands](https://www.blokapp.app/nl/) · [Norsk](https://www.blokapp.app/no/) · [Polski](https://www.blokapp.app/pl/) · [Suomi](https://www.blokapp.app/fi/) · [Türkçe](https://www.blokapp.app/tr/)
+- [Privacy policy](https://www.blokapp.app/en/privacy.html)
+- [Support](https://www.blokapp.app/en/support.html): troubleshooting, PIN recovery, re-pairing, subscription, account deletion
 
 ## Contact
 

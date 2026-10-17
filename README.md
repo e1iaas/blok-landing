@@ -1,6 +1,6 @@
 # Blok website
 
-Landing page, privacy policy and support for Blok: Parental Control, served by GitHub Pages in 15 languages.
+Landing page, privacy policy and support for Blok: Parental Control, in 15 languages at https://www.blokapp.app (Vercel deploys it from `main`).
 
 Edit the bilingual sources in `src/` (every text in Swedish and English), then build:
 
@@ -11,7 +11,7 @@ python3 build.py
 This writes the Swedish pages at the root (`index.html`, `privacy.html`, `support.html`), English in `en/` and
 the other 13 languages in their own folders (`da/`, `de/`, `el/`, `es/`, `fr/`, `hr/`, `it/`, `hu/`, `nl/`,
 `no/`, `pl/`, `fi/`, `tr/`), plus `sitemap.xml`, `robots.txt` and `llms.txt` (from `src/llms.txt`).
-Commit everything and push; Pages publishes in about a minute.
+Commit everything and push; Vercel publishes in about a minute.
 
 ## Translations
 
@@ -22,7 +22,7 @@ untranslated (those show in English). After changing English text in `src/`, add
 
 ## Settings in build.py
 
-- `DOMAIN`: the custom domain; switches every URL and writes `CNAME`.
+- `DOMAIN`: the site's domain; switches every URL and writes `CNAME` (so GitHub Pages redirects the old github.io URLs).
 - `APP_STORE_ID`: set at launch (or when pre-orders open). The "Coming soon" buttons then become links to each
   language's App Store storefront, and the Smart App Banner and JSON-LD download links are added.
 - `CAMPAIGN_PROVIDER_TOKEN`: optional; tags App Store links with `ct=web-<lang>` for App Store Connect Analytics.
