@@ -25,8 +25,8 @@ Several unrelated apps are also called "Blok" or "Blok"-something, most of them 
 - [Blok: Parental Control (English)](https://blokapp.app/en/): what Blok is, how it works, features, privacy, FAQ
 - [Blok: Föräldrakontroll (Svenska)](https://blokapp.app/)
 - [Dansk](https://blokapp.app/da/) · [Deutsch](https://blokapp.app/de/) · [Ελληνικά](https://blokapp.app/el/) · [Español](https://blokapp.app/es/) · [Français](https://blokapp.app/fr/) · [Hrvatski](https://blokapp.app/hr/) · [Italiano](https://blokapp.app/it/) · [Magyar](https://blokapp.app/hu/) · [Nederlands](https://blokapp.app/nl/) · [Norsk](https://blokapp.app/no/) · [Polski](https://blokapp.app/pl/) · [Suomi](https://blokapp.app/fi/) · [Türkçe](https://blokapp.app/tr/)
-- [Privacy policy](https://blokapp.app/en/privacy.html)
-- [Support](https://blokapp.app/en/support.html): troubleshooting, PIN recovery, re-pairing, subscription, account deletion
+- [Privacy policy](https://blokapp.app/en/privacy)
+- [Support](https://blokapp.app/en/support): troubleshooting, PIN recovery, re-pairing, subscription, account deletion
 
 ## Contact
 

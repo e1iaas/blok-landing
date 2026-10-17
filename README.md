@@ -12,6 +12,8 @@ python3 build.py
 This writes the Swedish pages at the root (`index.html`, `privacy.html`, `support.html`), English in `en/` and
 the other 13 languages in their own folders (`da/`, `de/`, `el/`, `es/`, `fr/`, `hr/`, `it/`, `hu/`, `nl/`,
 `no/`, `pl/`, `fi/`, `tr/`), plus `sitemap.xml`, `robots.txt` and `llms.txt` (from `src/llms.txt`).
+Vercel serves the pages without `.html` (`/support`, `/de/privacy`; `cleanUrls` in `vercel.json`), and every
+link the build writes uses those clean URLs.
 Commit everything and push; Vercel publishes in about a minute.
 
 ## Translations

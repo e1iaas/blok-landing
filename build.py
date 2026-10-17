@@ -2,8 +2,8 @@
 """Builds the static site from src/ into one folder per language.
 
     src/index.html   ->  index.html (sv), en/index.html, da/index.html, de/index.html, ...
-    src/privacy.html ->  privacy.html,    en/privacy.html, ...
-    src/support.html ->  support.html,    en/support.html, ...
+    src/privacy.html ->  privacy.html,    en/privacy.html, ...   (served as /privacy, /en/privacy)
+    src/support.html ->  support.html,    en/support.html, ...   (served as /support, /en/support)
 
 Swedish and English are written in src/ itself: any element with lang="sv" or lang="en" (other than
 <html>) belongs to that language only; <span lang="..."> wrappers are unwrapped in the output, other
@@ -193,7 +193,8 @@ class LanguageFilter(HTMLParser):
 
 
 def path(lang, page):
-    return LANGS[lang][1] + ("" if page == "index.html" else page)
+    """The page's public path. Vercel serves privacy.html as /privacy (cleanUrls in vercel.json)."""
+    return LANGS[lang][1] + ("" if page == "index.html" else page.removesuffix(".html"))
 
 
 def url(lang, page):
@@ -287,6 +288,7 @@ def build_page(page, lang, translate):
     }
     for key, value in values.items():
         out = out.replace(key, value)
+    out = re.sub(r'href="([^":#]*?)(privacy|support)\.html', r'href="\1\2', out)   # clean URLs in src links
     out = finish_jsonld(out, lang, translate, page)
     out = out.replace("<!--FAQ_JSONLD-->", faq_jsonld(out, lang))
     out = re.sub(r"\n[ \t]*(?=\n)", "\n", out)          # whitespace-only lines left by removed elements
