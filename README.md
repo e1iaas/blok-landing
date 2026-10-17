@@ -1,6 +1,7 @@
 # Blok website
 
-Landing page, privacy policy and support for Blok: Parental Control, in 15 languages at https://www.blokapp.app (Vercel deploys it from `main`).
+Landing page, privacy policy and support for Blok: Parental Control, in 15 languages at https://blokapp.app (Vercel deploys it from `main`; `vercel.json` redirects
+www.blokapp.app and blokapp.vercel.app there).
 
 Edit the bilingual sources in `src/` (every text in Swedish and English), then build:
 

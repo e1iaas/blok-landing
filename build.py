@@ -29,9 +29,9 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
-# The site's domain (served by Vercel, which redirects blokapp.app to www). Also written to CNAME, so
-# GitHub Pages redirects the old e1iaas.github.io/blok-landing/ URLs here. None: github.io.
-DOMAIN = "www.blokapp.app"
+# The site's domain, served by Vercel (vercel.json redirects www and blokapp.vercel.app here). Also written
+# to CNAME, so GitHub Pages redirects the old e1iaas.github.io/blok-landing/ URLs here. None: github.io.
+DOMAIN = "blokapp.app"
 BASE = f"https://{DOMAIN}/" if DOMAIN else "https://e1iaas.github.io/blok-landing/"
 # The numeric App Store id (apps.apple.com/.../id1234567890). Set at launch: the CTAs become App Store
 # links to each language's storefront, and the Smart App Banner and JSON-LD downloadUrl are added.

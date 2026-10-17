@@ -34,4 +34,4 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
-Sitemap: https://www.blokapp.app/sitemap.xml
+Sitemap: https://blokapp.app/sitemap.xml

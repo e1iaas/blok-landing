@@ -22,11 +22,11 @@ Several unrelated apps are also called "Blok" or "Blok"-something, most of them 
 
 ## Pages
 
-- [Blok: Parental Control (English)](https://www.blokapp.app/en/): what Blok is, how it works, features, privacy, FAQ
-- [Blok: Föräldrakontroll (Svenska)](https://www.blokapp.app/)
-- [Dansk](https://www.blokapp.app/da/) · [Deutsch](https://www.blokapp.app/de/) · [Ελληνικά](https://www.blokapp.app/el/) · [Español](https://www.blokapp.app/es/) · [Français](https://www.blokapp.app/fr/) · [Hrvatski](https://www.blokapp.app/hr/) · [Italiano](https://www.blokapp.app/it/) · [Magyar](https://www.blokapp.app/hu/) · [Nederlands](https://www.blokapp.app/nl/) · [Norsk](https://www.blokapp.app/no/) · [Polski](https://www.blokapp.app/pl/) · [Suomi](https://www.blokapp.app/fi/) · [Türkçe](https://www.blokapp.app/tr/)
-- [Privacy policy](https://www.blokapp.app/en/privacy.html)
-- [Support](https://www.blokapp.app/en/support.html): troubleshooting, PIN recovery, re-pairing, subscription, account deletion
+- [Blok: Parental Control (English)](https://blokapp.app/en/): what Blok is, how it works, features, privacy, FAQ
+- [Blok: Föräldrakontroll (Svenska)](https://blokapp.app/)
+- [Dansk](https://blokapp.app/da/) · [Deutsch](https://blokapp.app/de/) · [Ελληνικά](https://blokapp.app/el/) · [Español](https://blokapp.app/es/) · [Français](https://blokapp.app/fr/) · [Hrvatski](https://blokapp.app/hr/) · [Italiano](https://blokapp.app/it/) · [Magyar](https://blokapp.app/hu/) · [Nederlands](https://blokapp.app/nl/) · [Norsk](https://blokapp.app/no/) · [Polski](https://blokapp.app/pl/) · [Suomi](https://blokapp.app/fi/) · [Türkçe](https://blokapp.app/tr/)
+- [Privacy policy](https://blokapp.app/en/privacy.html)
+- [Support](https://blokapp.app/en/support.html): troubleshooting, PIN recovery, re-pairing, subscription, account deletion
 
 ## Contact
 

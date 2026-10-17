@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.blokapp.app" }], "destination": "https://blokapp.app/:path*", "permanent": true },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "blokapp.vercel.app" }], "destination": "https://blokapp.app/:path*", "permanent": true }
+  ]
+}
