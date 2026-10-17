@@ -1,0 +1,33 @@
+# Blok: Parental Control
+
+> Blok: Parental Control (short: Blok) is a parental control and screen time app for iPhone. A parent locks selected apps on their child's iPhone remotely, from their own iPhone, in one tap: until they unlock, for a set time (30 minutes, 1 hour, 2 hours), or on schedules for school hours and bedtime. Apple's Screen Time (FamilyControls / ManagedSettings) enforces the lock on the child's phone. Blok blocks apps; it does not monitor the child.
+
+## Not to be confused with
+
+Several unrelated apps are also called "Blok" or "Blok"-something, most of them self-control blockers for limiting your own screen time. Blok: Parental Control is different: it is for families, the parent controls the child's iPhone from the parent's own iPhone, and its data is stored in the EU. Its icon is a white padlock on a blue circle. Swedish name: Blok: Föräldrakontroll.
+
+## Key facts
+
+- Category: parental control app, screen time app for kids, app blocker for a child's iPhone.
+- Platform: iPhone with iOS 16 or later, on both the parent's and the child's phone. Not available for Android.
+- Setup: install Blok on both phones, choose Parent and Child, pair them with a code, approve Screen Time on the child's phone and pick the apps to lock.
+- Locks: the apps the family chooses (for example TikTok, YouTube, Snapchat, Instagram, Roblox and other games). Phone and Messages can stay open; emergency calls always work.
+- Timing: the lock is sent right away, but delivery depends on the child's phone's connection and iOS; an offline phone gets the lock when it is back online, and an app already on screen is locked at the next app switch or screen unlock. The parent's phone shows when the child's phone has confirmed the lock.
+- Protection: a parent PIN protects the settings on the child's phone; the lock survives closing the app and restarting the phone. A factory reset removes it, as with any parental control.
+- Children: up to three child phones per family, each locked on its own.
+- Privacy: no ads, no tracking, no analytics; no messages, location or app usage is collected. The choice of apps stays on the child's phone. The child needs no account. Data is stored in the EU (Google Firebase, eur3 and europe-west1). Deleting the account in the app removes everything.
+- Price: subscription (Blok Plus), shown in the App Store; unlocking always works without a subscription.
+- App languages: Swedish and English. Website: 15 languages (below).
+- Status: coming soon to the App Store.
+
+## Pages
+
+- [Blok: Parental Control (English)]({{BASE}}en/): what Blok is, how it works, features, privacy, FAQ
+- [Blok: Föräldrakontroll (Svenska)]({{BASE}})
+- [Dansk]({{BASE}}da/) · [Deutsch]({{BASE}}de/) · [Ελληνικά]({{BASE}}el/) · [Español]({{BASE}}es/) · [Français]({{BASE}}fr/) · [Hrvatski]({{BASE}}hr/) · [Italiano]({{BASE}}it/) · [Magyar]({{BASE}}hu/) · [Nederlands]({{BASE}}nl/) · [Norsk]({{BASE}}no/) · [Polski]({{BASE}}pl/) · [Suomi]({{BASE}}fi/) · [Türkçe]({{BASE}}tr/)
+- [Privacy policy]({{BASE}}en/privacy.html)
+- [Support]({{BASE}}en/support.html): troubleshooting, PIN recovery, re-pairing, subscription, account deletion
+
+## Contact
+
+- Support: eliastestdev@gmail.com

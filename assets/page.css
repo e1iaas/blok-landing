@@ -12,9 +12,16 @@ header { padding-top: env(safe-area-inset-top); background: rgba(242, 242, 245, 
 .nav { display: flex; align-items: center; height: 64px; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; text-decoration: none; color: var(--ink); }
 .brand img { width: 32px; height: 32px; border-radius: 8px; }
-.lang { display: flex; background: var(--cream); border-radius: 99px; padding: 3px; margin-left: auto; }
-.lang a { display: grid; place-items: center; min-width: 44px; min-height: 38px; font-weight: 700; font-size: 14px; color: var(--muted); text-decoration: none; border-radius: 99px; }
-.lang a[aria-current="page"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.lang { position: relative; margin-left: auto; }
+.lang summary { list-style: none; display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; background: var(--cream); border-radius: 99px; font-weight: 700; font-size: 14px; cursor: pointer; }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 8px); display: grid; grid-template-columns: 1fr 1fr; gap: 2px; width: 290px; max-width: calc(100vw - 32px); padding: 6px; background: var(--surface); border-radius: 16px; box-shadow: 0 14px 36px rgba(51, 43, 66, .2); z-index: 30; }
+.lang-menu a { padding: 10px 12px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px; color: var(--ink); }
+.lang-menu a:hover { background: var(--canvas); }
+.lang-menu a[aria-current="page"] { background: var(--plum-soft); color: var(--plum); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.note { background: var(--plum-soft); border-radius: 14px; padding: 12px 16px; margin-top: 14px; font-size: 15px; }
 main { padding: 48px 0 64px; }
 h1 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -.015em; }
 .updated { color: var(--muted); margin-top: 10px; }

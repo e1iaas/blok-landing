@@ -1,22 +1,20 @@
 <!doctype html>
-<!-- Source page. Every text exists in Swedish and English (lang="sv" / lang="en"); build.py writes
-     /index.html (Swedish) and /en/index.html (English) from it. Edit here, then run: python3 build.py -->
+<!-- Source page. Every text exists in Swedish and English (lang="sv" / lang="en"); build.py writes /index.html
+     (Swedish), /en/ and the translated languages (from i18n/*.json) from it. Edit here, then run: python3 build.py -->
 <html lang="{{LANG}}">
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow" data-src-only>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title lang="sv">Blok – Föräldrakontroll för iPhone: lås barnets mobil</title>
-<title lang="en">Blok – Parental Control for iPhone: Lock Your Kid's Phone</title>
-<meta lang="sv" name="description" content="Blok är föräldrakontroll för iPhone. Lås barnets appar från din egen telefon med ett tryck, med tidslås och scheman för skoltid och läggdags. Ingen spårning.">
-<meta lang="en" name="description" content="Blok is a parental control app for iPhone. Lock your child's apps from your own phone in one tap, with timed locks and school and bedtime schedules. No tracking.">
+<title lang="sv">Blok: Föräldrakontroll för iPhone – lås barnets mobil</title>
+<title lang="en">Blok: Parental Control App for iPhone – Lock Your Kid's Phone</title>
+<meta lang="sv" name="description" content="Blok: Föräldrakontroll är en app för skärmtid och föräldrakontroll på iPhone. Lås barnets appar från din telefon med ett tryck, med tidslås och scheman. Ingen spårning.">
+<meta lang="en" name="description" content="Blok: Parental Control is a screen time and parental control app for iPhone. Lock your child's apps from your phone in one tap, with timers and schedules. No tracking.">
 <link rel="canonical" href="{{CANON}}">
-<link rel="alternate" hreflang="sv" href="{{ALT_SV}}">
-<link rel="alternate" hreflang="en" href="{{ALT_EN}}">
-<link rel="alternate" hreflang="x-default" href="{{ALT_EN}}">
+{{HREFLANG}}
 <meta name="theme-color" content="#F2F2F5">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<!-- At launch, add the Smart App Banner: <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
+<meta name="apple-itunes-app" content="app-id={{APP_STORE_ID}}" data-when="launched">
 <link rel="icon" href="{{ROOT}}assets/favicon.png">
 <link rel="apple-touch-icon" href="{{ROOT}}assets/icon.png">
 <meta property="og:type" content="website">
@@ -24,11 +22,11 @@
 <meta property="og:url" content="{{CANON}}">
 <meta lang="sv" property="og:locale" content="sv_SE">
 <meta lang="en" property="og:locale" content="en_US">
-<meta lang="sv" property="og:title" content="Blok – Lås barnets mobil från din egen">
-<meta lang="en" property="og:title" content="Blok – Lock your child's phone from yours">
+<meta lang="sv" property="og:title" content="Blok: Föräldrakontroll – lås barnets mobil från din egen">
+<meta lang="en" property="og:title" content="Blok: Parental Control – lock your child's phone from yours">
 <meta lang="sv" property="og:description" content="Föräldrakontroll för iPhone. Ett tryck, så är apparna ni valt låsta.">
 <meta lang="en" property="og:description" content="Parental control for iPhone. One tap, and the apps you picked are locked.">
-<meta property="og:image" content="{{BASE}}assets/og-{{LANG}}.jpg">
+<meta property="og:image" content="{{BASE}}assets/og-{{OG_LANG}}.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -43,7 +41,7 @@
     {
       "@type": "MobileApplication",
       "name": "Blok",
-      "alternateName": "Blok föräldrakontroll",
+      "alternateName": "Blok: Föräldrakontroll",
       "url": "{{CANON}}",
       "description": "Blok är en app för föräldrakontroll på iPhone. En förälder låser valda appar på barnets iPhone på distans från sin egen telefon, direkt eller med tidslås och scheman. Låset upprätthålls av Apples Skärmtid. Inga annonser och ingen spårning.",
       "applicationCategory": "LifestyleApplication",
@@ -63,7 +61,7 @@
       "email": "eliastestdev@gmail.com",
       "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "eliastestdev@gmail.com", "availableLanguage": ["Swedish", "English"] }
     },
-    { "@type": "WebSite", "name": "Blok", "url": "{{BASE}}", "inLanguage": "sv" }
+    { "@type": "WebSite", "name": "Blok", "url": "{{HOME}}", "inLanguage": "{{LANG}}" }
   ]
 }
 </script>
@@ -74,7 +72,7 @@
     {
       "@type": "MobileApplication",
       "name": "Blok",
-      "alternateName": "Blok parental control",
+      "alternateName": "Blok: Parental Control",
       "url": "{{CANON}}",
       "description": "Blok is a parental control app for iPhone. A parent remotely locks selected apps on their child's iPhone from their own phone, right away or with timed locks and schedules. The lock is enforced by Apple's Screen Time. No ads and no tracking.",
       "applicationCategory": "LifestyleApplication",
@@ -94,7 +92,7 @@
       "email": "eliastestdev@gmail.com",
       "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "eliastestdev@gmail.com", "availableLanguage": ["Swedish", "English"] }
     },
-    { "@type": "WebSite", "name": "Blok", "url": "{{BASE}}en/", "inLanguage": "en" }
+    { "@type": "WebSite", "name": "Blok", "url": "{{HOME}}", "inLanguage": "{{LANG}}" }
   ]
 }
 </script>
@@ -126,9 +124,15 @@
   .nav nav { display: flex; gap: 24px; margin-left: auto; font-weight: 600; font-size: 15px; color: var(--muted); }
   .nav nav a { text-decoration: none; padding: 10px 0; }
   .nav nav a:hover { color: var(--ink); }
-  .lang { display: flex; background: var(--cream); border-radius: 99px; padding: 3px; }
-  .lang a { display: grid; place-items: center; min-width: 44px; min-height: 38px; font-weight: 700; font-size: 14px; color: var(--muted); text-decoration: none; border-radius: 99px; }
-  .lang a[aria-current="page"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .lang { position: relative; }
+  .lang summary { list-style: none; display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; background: var(--cream); border-radius: 99px; font-weight: 700; font-size: 14px; cursor: pointer; }
+  .lang summary::-webkit-details-marker { display: none; }
+  .lang summary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+  .lang-menu { position: absolute; right: 0; top: calc(100% + 8px); display: grid; grid-template-columns: 1fr 1fr; gap: 2px; width: 290px; max-width: calc(100vw - 32px); padding: 6px; background: var(--surface); border-radius: 16px; box-shadow: 0 14px 36px rgba(51, 43, 66, .2); z-index: 30; }
+  .lang-menu a { padding: 10px 12px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px; }
+  .lang-menu a:hover { background: var(--canvas); }
+  .lang-menu a[aria-current="page"] { background: var(--plum-soft); color: var(--plum); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
   /* Buttons */
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: var(--radius-sm); font: 700 17px var(--font); text-decoration: none; border: 0; }
@@ -201,12 +205,12 @@
 
   /* FAQ */
   .faq { max-width: 780px; margin: 0 auto; display: grid; gap: 12px; }
-  details { background: var(--surface); border-radius: 20px; padding: 0 24px; }
-  summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 18px; padding: 20px 0; min-height: 44px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; color: var(--plum); font-size: 26px; line-height: 1; transition: transform .2s; flex: none; }
-  details[open] summary::after { transform: rotate(45deg); }
-  details p { color: var(--muted); padding-bottom: 22px; }
+  .faq details { background: var(--surface); border-radius: 20px; padding: 0 24px; }
+  .faq summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 18px; padding: 20px 0; min-height: 44px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--plum); font-size: 26px; line-height: 1; transition: transform .2s; flex: none; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { color: var(--muted); padding-bottom: 22px; }
 
   /* Final + footer */
   .final { text-align: center; }
@@ -255,8 +259,8 @@
     .panel { padding: 22px; border-radius: 22px; }
     .grid3, .privacy, .what { gap: 12px; }
     .facts li { grid-template-columns: 1fr; gap: 2px; }
-    details { padding: 0 18px; }
-    summary { font-size: 17px; padding: 16px 0; }
+    .faq details { padding: 0 18px; }
+    .faq summary { font-size: 17px; padding: 16px 0; }
     .final .panel { padding: 40px 20px; }
     .foot { flex-direction: column; align-items: flex-start; }
     .foot .links { margin-left: 0; }
@@ -276,7 +280,7 @@
       <a href="#privacy"><span lang="sv">Integritet</span><span lang="en">Privacy</span></a>
       <a href="#faq"><span lang="sv">Frågor</span><span lang="en">FAQ</span></a>
     </nav>
-    <div class="lang">{{LANG_SWITCH}}</div>
+    <details class="lang"><summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr"><span lang="sv">Språk:</span><span lang="en">Language:</span></span> {{LANG_CODE}}</summary><div class="lang-menu">{{LANG_SWITCH}}</div></details>
   </div>
 </header>
 
@@ -295,8 +299,12 @@
           <span lang="en">One tap on LOCK and the apps you picked are locked on your child's iPhone. Dinner, homework or bedtime: you decide when it's time for a screen break.</span>
         </p>
         <div class="cta">
-          <!-- At launch: replace with Apple's official "Download on the App Store" badge linking to the App Store page. -->
-          <span class="btn btn-plum">
+          <!-- Before launch: "coming soon"; after (APP_STORE_ID in build.py): a link to the App Store. -->
+          <a class="btn btn-plum" href="{{STORE_URL}}" data-when="launched">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.8 1.2 1.8 2.6 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-.9-2.4-3.7zM14 5.3c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
+            <span lang="sv">Ladda ned i App Store</span><span lang="en">Download on the App Store</span>
+          </a>
+          <span class="btn btn-plum" data-when="soon">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>
             <span lang="sv">Snart i App Store</span><span lang="en">Coming soon to the App Store</span>
           </span>
@@ -479,6 +487,18 @@
           <p><span lang="sv">Nej. Blok läser inga meddelanden, spårar ingen plats och samlar inte in vilka appar barnet använder. Valet av appar som låses stannar på barnets telefon.</span><span lang="en">No. Blok reads no messages, tracks no location and doesn't collect which apps your child uses. The choice of apps to lock stays on your child's phone.</span></p>
         </details>
         <details class="reveal">
+          <summary><span lang="sv">Kan jag spärra TikTok, YouTube, Snapchat eller spel?</span><span lang="en">Can I block TikTok, YouTube, Snapchat or games?</span></summary>
+          <p><span lang="sv">Ja. När ni kopplar ihop telefonerna väljer ni vilka appar på barnets iPhone som ska låsas, till exempel TikTok, YouTube, Snapchat, Instagram, Roblox eller andra spel. Telefon, Meddelanden och andra appar ni vill ha öppna fortsätter att fungera.</span><span lang="en">Yes. When you pair the phones, you choose which apps on your child's iPhone get locked, for example TikTok, YouTube, Snapchat, Instagram, Roblox or other games. Phone, Messages and any other apps you want open keep working.</span></p>
+        </details>
+        <details class="reveal">
+          <summary><span lang="sv">Vad kostar Blok?</span><span lang="en">How much does Blok cost?</span></summary>
+          <p><span lang="sv">Blok har en prenumeration, Blok Plus, och priset för ditt land visas i App Store. Att låsa upp barnets telefon fungerar alltid, även utan prenumeration. Blok har inga annonser.</span><span lang="en">Blok has a subscription, Blok Plus, and the price for your country is shown in the App Store. Unlocking your child's phone always works, even without a subscription. Blok has no ads.</span></p>
+        </details>
+        <details class="reveal">
+          <summary><span lang="sv">Finns det flera appar som heter Blok?</span><span lang="en">Are there other apps called Blok?</span></summary>
+          <p><span lang="sv">Ja, namnet är vanligt. Den här appen heter Blok: Föräldrakontroll och är föräldrakontroll för familjer: en förälder låser apparna på barnets iPhone från sin egen iPhone. Det är inte en app för att begränsa sin egen skärmtid. Känn igen den på ikonen: ett vitt hänglås på en blå cirkel.</span><span lang="en">Yes, the name is common. This app is called Blok: Parental Control and is made for families: a parent locks the apps on their child's iPhone from their own iPhone. It isn't an app for limiting your own screen time. Look for the icon: a white padlock on a blue circle.</span></p>
+        </details>
+        <details class="reveal">
           <summary><span lang="sv">Fungerar Blok på Android?</span><span lang="en">Does Blok work on Android?</span></summary>
           <p><span lang="sv">Inte än. Blok är byggt för iPhone, både för dig och barnet.</span><span lang="en">Not yet. Blok is built for iPhone, for both you and your child.</span></p>
         </details>
@@ -493,7 +513,8 @@
         <img src="{{ROOT}}assets/icon.png" alt="" width="84" height="84" loading="lazy">
         <h2><span lang="sv">Ge barnet en paus från mobilen.</span><span lang="en">Give your child a break from the phone.</span></h2>
         <div class="cta">
-          <span class="btn btn-plum"><span lang="sv">Snart i App Store</span><span lang="en">Coming soon to the App Store</span></span>
+          <a class="btn btn-plum" href="{{STORE_URL}}" data-when="launched"><span lang="sv">Ladda ned i App Store</span><span lang="en">Download on the App Store</span></a>
+          <span class="btn btn-plum" data-when="soon"><span lang="sv">Snart i App Store</span><span lang="en">Coming soon to the App Store</span></span>
         </div>
       </div>
     </div>
@@ -521,6 +542,9 @@
       toggle.querySelector(".label-open").hidden = locked;
       toggle.querySelector(".label-locked").hidden = !locked;
     });
+
+    var langMenu = document.querySelector("details.lang");
+    document.addEventListener("click", function (e) { if (!langMenu.contains(e.target)) langMenu.open = false; });
 
     var header = document.querySelector("header");
     window.addEventListener("scroll", function () { header.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
