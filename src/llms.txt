@@ -17,14 +17,14 @@ Several unrelated apps are also called "Blok" or "Blok"-something, most of them 
 - Children: up to three child phones per family, each locked on its own.
 - Privacy: no ads, no tracking, no analytics; no messages, location or app usage is collected. The choice of apps stays on the child's phone. The child needs no account. Data is stored in the EU (Google Firebase, eur3 and europe-west1). Deleting the account in the app removes everything.
 - Price: subscription (Blok Plus), shown in the App Store; unlocking always works without a subscription.
-- App languages: Swedish and English. Website: 15 languages (below).
+- App languages: Swedish and English. Website: 16 languages (below).
 - Status: coming soon to the App Store.
 
 ## Pages
 
 - [Blok: Parental Control (English)]({{BASE}}en/): what Blok is, how it works, features, privacy, FAQ
 - [Blok: Föräldrakontroll (Svenska)]({{BASE}})
-- [Dansk]({{BASE}}da/) · [Deutsch]({{BASE}}de/) · [Ελληνικά]({{BASE}}el/) · [Español]({{BASE}}es/) · [Français]({{BASE}}fr/) · [Hrvatski]({{BASE}}hr/) · [Italiano]({{BASE}}it/) · [Magyar]({{BASE}}hu/) · [Nederlands]({{BASE}}nl/) · [Norsk]({{BASE}}no/) · [Polski]({{BASE}}pl/) · [Suomi]({{BASE}}fi/) · [Türkçe]({{BASE}}tr/)
+- [Dansk]({{BASE}}da/) · [Deutsch]({{BASE}}de/) · [Ελληνικά]({{BASE}}el/) · [Español]({{BASE}}es/) · [Français]({{BASE}}fr/) · [Hrvatski]({{BASE}}hr/) · [Italiano]({{BASE}}it/) · [Magyar]({{BASE}}hu/) · [Nederlands]({{BASE}}nl/) · [Norsk]({{BASE}}no/) · [Polski]({{BASE}}pl/) · [Suomi]({{BASE}}fi/) · [Türkçe]({{BASE}}tr/) · [العربية]({{BASE}}ar/)
 - [Privacy policy]({{BASE}}en/privacy)
 - [Support]({{BASE}}en/support): troubleshooting, PIN recovery, re-pairing, subscription, account deletion
 

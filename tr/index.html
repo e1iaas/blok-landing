@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" dir="ltr">
 <head>
 <meta charset="utf-8">
 
@@ -24,6 +24,7 @@
 <link rel="alternate" hreflang="pl" href="https://blokapp.app/pl/">
 <link rel="alternate" hreflang="fi" href="https://blokapp.app/fi/">
 <link rel="alternate" hreflang="tr" href="https://blokapp.app/tr/">
+<link rel="alternate" hreflang="ar" href="https://blokapp.app/ar/">
 <link rel="alternate" hreflang="x-default" href="https://blokapp.app/en/">
 <meta name="theme-color" content="#F2F2F5">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -216,8 +217,8 @@
   img { display: block; max-width: 100%; height: auto; }
   a { color: inherit; }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-left)); }
-  .skip { position: absolute; left: -999px; top: 8px; background: var(--surface); padding: 10px 14px; border-radius: 10px; z-index: 20; }
-  .skip:focus { left: 8px; }
+  .skip { position: absolute; inset-inline-start: 8px; top: 8px; transform: translateY(-200%); background: var(--surface); padding: 10px 14px; border-radius: 10px; z-index: 20; }
+  .skip:focus { transform: none; }
   :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
 
   /* Header */
@@ -226,14 +227,14 @@
   .nav { display: flex; align-items: center; gap: 28px; height: 64px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 21px; text-decoration: none; min-height: 44px; }
   .brand img { width: 34px; height: 34px; border-radius: 9px; }
-  .nav nav { display: flex; gap: 24px; margin-left: auto; font-weight: 600; font-size: 15px; color: var(--muted); }
+  .nav nav { display: flex; gap: 24px; margin-inline-start: auto; font-weight: 600; font-size: 15px; color: var(--muted); }
   .nav nav a { text-decoration: none; padding: 10px 0; }
   .nav nav a:hover { color: var(--ink); }
   .lang { position: relative; }
   .lang summary { list-style: none; display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; background: var(--cream); border-radius: 99px; font-weight: 700; font-size: 14px; cursor: pointer; }
   .lang summary::-webkit-details-marker { display: none; }
   .lang summary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
-  .lang-menu { position: absolute; right: 0; top: calc(100% + 8px); display: grid; grid-template-columns: 1fr 1fr; gap: 2px; width: 290px; max-width: calc(100vw - 32px); padding: 6px; background: var(--surface); border-radius: 16px; box-shadow: 0 14px 36px rgba(51, 43, 66, .2); z-index: 30; }
+  .lang-menu { position: absolute; inset-inline-end: 0; top: calc(100% + 8px); display: grid; grid-template-columns: 1fr 1fr; gap: 2px; width: 290px; max-width: calc(100vw - 32px); padding: 6px; background: var(--surface); border-radius: 16px; box-shadow: 0 14px 36px rgba(51, 43, 66, .2); z-index: 30; }
   .lang-menu a { padding: 10px 12px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px; }
   .lang-menu a:hover { background: var(--canvas); }
   .lang-menu a[aria-current="page"] { background: var(--plum-soft); color: var(--plum); }
@@ -251,6 +252,7 @@
   .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
   .kicker { display: inline-block; font-size: 15px; font-weight: 700; color: var(--plum); background: var(--plum-soft); padding: 6px 14px; border-radius: 99px; margin-bottom: 18px; }
   h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1.05; font-weight: 800; letter-spacing: -.02em; }
+  [dir="rtl"] h1, [dir="rtl"] h2 { letter-spacing: 0; line-height: 1.3; }  /* tracking breaks Arabic letter joining */
   h1 .line { display: block; }
   h1 .plum { color: var(--plum); }
   .lead { font-size: 20px; color: var(--muted); max-width: 30em; margin-top: 18px; }
@@ -266,7 +268,7 @@
   .glow { position: absolute; inset: 8% -6%; border-radius: 50%; background: radial-gradient(closest-side, rgba(84, 140, 217, .28), transparent); transition: background .5s; z-index: -1; }
   .hero-phones.is-locked .glow { background: radial-gradient(closest-side, rgba(102, 71, 120, .3), transparent); }
   .try { margin-top: 20px; display: flex; justify-content: center; }
-  .toggle { display: inline-flex; align-items: center; gap: 10px; background: var(--surface); border: 0; border-radius: 99px; min-height: 48px; padding: 8px 18px 8px 11px; font: 700 15px var(--font); color: var(--blue); cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .toggle { display: inline-flex; align-items: center; gap: 10px; background: var(--surface); border: 0; border-radius: 99px; min-height: 48px; padding-block: 8px; padding-inline: 11px 18px; font: 700 15px var(--font); color: var(--blue); cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
   .toggle .dot { width: 28px; height: 28px; border-radius: 50%; background: var(--blue); display: grid; place-items: center; transition: background .3s; }
   .is-locked + .try .toggle { color: var(--plum); }
   .is-locked + .try .toggle .dot { background: var(--plum); }
@@ -324,7 +326,7 @@
   .final .cta { justify-content: center; }
   footer { padding: 32px 0 calc(44px + env(safe-area-inset-bottom)); color: var(--muted); font-size: 15px; }
   .foot { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
-  .foot .links { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-left: auto; }
+  .foot .links { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-inline-start: auto; }
   .foot a { text-decoration: none; display: inline-block; padding: 10px 0; }
   .foot a:hover { color: var(--ink); }
 
@@ -344,7 +346,7 @@
     .lead { margin-left: auto; margin-right: auto; }
     .cta { justify-content: center; }
     .nav nav { display: none; }
-    .lang { margin-left: auto; }
+    .lang { margin-inline-start: auto; }
   }
   @media (max-width: 560px) {
     .wrap { padding: 0 16px; }
@@ -368,7 +370,7 @@
     .faq summary { font-size: 17px; padding: 16px 0; }
     .final .panel { padding: 40px 20px; }
     .foot { flex-direction: column; align-items: flex-start; }
-    .foot .links { margin-left: 0; }
+    .foot .links { margin-inline-start: 0; }
   }
 </style>
 <script>document.documentElement.classList.add("js");</script>
@@ -385,7 +387,7 @@
       <a href="#privacy">Gizlilik</a>
       <a href="#faq">SSS</a>
     </nav>
-    <details class="lang"><summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Dil:</span> TR</summary><div class="lang-menu"><a href="../" hreflang="sv" lang="sv">Svenska</a><a href="../en/" hreflang="en" lang="en">English</a><a href="../da/" hreflang="da" lang="da">Dansk</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../el/" hreflang="el" lang="el">Ελληνικά</a><a href="../es/" hreflang="es" lang="es">Español</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../hr/" hreflang="hr" lang="hr">Hrvatski</a><a href="../it/" hreflang="it" lang="it">Italiano</a><a href="../hu/" hreflang="hu" lang="hu">Magyar</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../no/" hreflang="no" lang="no">Norsk</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../fi/" hreflang="fi" lang="fi">Suomi</a><a href="../tr/" hreflang="tr" lang="tr" aria-current="page">Türkçe</a></div></details>
+    <details class="lang"><summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Dil:</span> TR</summary><div class="lang-menu"><a href="../" hreflang="sv" lang="sv">Svenska</a><a href="../en/" hreflang="en" lang="en">English</a><a href="../da/" hreflang="da" lang="da">Dansk</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../el/" hreflang="el" lang="el">Ελληνικά</a><a href="../es/" hreflang="es" lang="es">Español</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../hr/" hreflang="hr" lang="hr">Hrvatski</a><a href="../it/" hreflang="it" lang="it">Italiano</a><a href="../hu/" hreflang="hu" lang="hu">Magyar</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../no/" hreflang="no" lang="no">Norsk</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../fi/" hreflang="fi" lang="fi">Suomi</a><a href="../tr/" hreflang="tr" lang="tr" aria-current="page">Türkçe</a><a href="../ar/" hreflang="ar" lang="ar">العربية</a></div></details>
   </div>
 </header>
 

@@ -17,14 +17,14 @@ Several unrelated apps are also called "Blok" or "Blok"-something, most of them 
 - Children: up to three child phones per family, each locked on its own.
 - Privacy: no ads, no tracking, no analytics; no messages, location or app usage is collected. The choice of apps stays on the child's phone. The child needs no account. Data is stored in the EU (Google Firebase, eur3 and europe-west1). Deleting the account in the app removes everything.
 - Price: subscription (Blok Plus), shown in the App Store; unlocking always works without a subscription.
-- App languages: Swedish and English. Website: 15 languages (below).
+- App languages: Swedish and English. Website: 16 languages (below).
 - Status: coming soon to the App Store.
 
 ## Pages
 
 - [Blok: Parental Control (English)](https://blokapp.app/en/): what Blok is, how it works, features, privacy, FAQ
 - [Blok: Föräldrakontroll (Svenska)](https://blokapp.app/)
-- [Dansk](https://blokapp.app/da/) · [Deutsch](https://blokapp.app/de/) · [Ελληνικά](https://blokapp.app/el/) · [Español](https://blokapp.app/es/) · [Français](https://blokapp.app/fr/) · [Hrvatski](https://blokapp.app/hr/) · [Italiano](https://blokapp.app/it/) · [Magyar](https://blokapp.app/hu/) · [Nederlands](https://blokapp.app/nl/) · [Norsk](https://blokapp.app/no/) · [Polski](https://blokapp.app/pl/) · [Suomi](https://blokapp.app/fi/) · [Türkçe](https://blokapp.app/tr/)
+- [Dansk](https://blokapp.app/da/) · [Deutsch](https://blokapp.app/de/) · [Ελληνικά](https://blokapp.app/el/) · [Español](https://blokapp.app/es/) · [Français](https://blokapp.app/fr/) · [Hrvatski](https://blokapp.app/hr/) · [Italiano](https://blokapp.app/it/) · [Magyar](https://blokapp.app/hu/) · [Nederlands](https://blokapp.app/nl/) · [Norsk](https://blokapp.app/no/) · [Polski](https://blokapp.app/pl/) · [Suomi](https://blokapp.app/fi/) · [Türkçe](https://blokapp.app/tr/) · [العربية](https://blokapp.app/ar/)
 - [Privacy policy](https://blokapp.app/en/privacy)
 - [Support](https://blokapp.app/en/support): troubleshooting, PIN recovery, re-pairing, subscription, account deletion
 

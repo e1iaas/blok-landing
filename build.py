@@ -57,7 +57,9 @@ LANGS = {
     "pl": ("Polski", "pl/", "pl_PL", "pl"),
     "fi": ("Suomi", "fi/", "fi_FI", "fi"),
     "tr": ("Türkçe", "tr/", "tr_TR", "tr"),
+    "ar": ("العربية", "ar/", "ar_AR", "sa"),
 }
+RTL = {"ar"}
 SOURCE_LANGS = ("sv", "en")
 PAGES = ["index.html", "privacy.html", "support.html"]
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
@@ -276,6 +278,7 @@ def build_page(page, lang, translate):
     values = {
         "{{LANG}}": lang,
         "{{LANG_CODE}}": lang.upper(),
+        "{{DIR}}": "rtl" if lang in RTL else "ltr",
         "{{ROOT}}": "../" if LANGS[lang][1] else "",
         "{{BASE}}": BASE,
         "{{HOME}}": url(lang, "index.html"),

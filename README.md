@@ -1,6 +1,6 @@
 # Blok website
 
-Landing page, privacy policy and support for Blok: Parental Control, in 15 languages at https://blokapp.app (Vercel deploys it from `main`; `vercel.json` redirects
+Landing page, privacy policy and support for Blok: Parental Control, in 16 languages at https://blokapp.app (Vercel deploys it from `main`; `vercel.json` redirects
 www.blokapp.app and blokapp.vercel.app there).
 
 Edit the bilingual sources in `src/` (every text in Swedish and English), then build:
@@ -10,10 +10,11 @@ python3 build.py
 ```
 
 This writes the Swedish pages at the root (`index.html`, `privacy.html`, `support.html`), English in `en/` and
-the other 13 languages in their own folders (`da/`, `de/`, `el/`, `es/`, `fr/`, `hr/`, `it/`, `hu/`, `nl/`,
-`no/`, `pl/`, `fi/`, `tr/`), plus `sitemap.xml`, `robots.txt` and `llms.txt` (from `src/llms.txt`).
+the other 14 languages in their own folders (`da/`, `de/`, `el/`, `es/`, `fr/`, `hr/`, `it/`, `hu/`, `nl/`,
+`no/`, `pl/`, `fi/`, `tr/`, `ar/`), plus `sitemap.xml`, `robots.txt` and `llms.txt` (from `src/llms.txt`).
 Vercel serves the pages without `.html` (`/support`, `/de/privacy`; `cleanUrls` in `vercel.json`), and every
-link the build writes uses those clean URLs.
+link the build writes uses those clean URLs. Arabic pages get `dir="rtl"` (`RTL` in `build.py`); the CSS uses
+logical properties (`margin-inline-start`, `inset-inline-end`) so the layout mirrors on its own.
 Commit everything and push; Vercel publishes in about a minute.
 
 ## Translations

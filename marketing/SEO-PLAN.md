@@ -1,7 +1,7 @@
 # Blok: search, App Store and AI visibility plan
 
 Goal: when a parent searches "parental control app", "screen time app for kids", "block apps on my child's iPhone"
-(or the same in one of our 15 languages) in Google, the App Store or an AI assistant, the answer leads to
+(or the same in one of our 16 languages) in Google, the App Store or an AI assistant, the answer leads to
 Blok's App Store page.
 
 ## How ranking actually works here
@@ -20,8 +20,9 @@ competition than in English or German, and that's where the first rankings will 
 
 ## Done in this repo
 
-- 15 language versions (sv, en, da, de, el, es, fr, hr, it, hu, nl, no, pl, fi, tr), each written around that
-  country's own search terms, with Apple's local name for Screen Time.
+- 16 language versions (sv, en, da, de, el, es, fr, hr, it, hu, nl, no, pl, fi, tr, ar), each written around that
+  country's own search terms, with Apple's local name for Screen Time. Arabic is laid out right to left and
+  aimed at Saudi Arabia, the UAE and the wider Arab world.
 - Full `hreflang` cross-links on every page and in `sitemap.xml`, with `x-default` pointing to English.
 - Structured data per language: `MobileApplication` and `FAQPage`. After launch, `downloadUrl` and `sameAs` point
   to that country's App Store page.
@@ -44,7 +45,7 @@ competition than in English or German, and that's where the first rankings will 
 2. **Google Search Console and Bing Webmaster Tools.** Verify the domain in both and submit `sitemap.xml`. Bing
    matters for AI too: ChatGPT search and Copilot draw on Bing's index. In Bing, also turn on IndexNow or use the
    URL submission tool.
-3. **Put all 13 new localizations in App Store Connect** using `marketing/aso/*.json`:
+3. **Put all 14 new localizations in App Store Connect** using `marketing/aso/*.json`:
    - Use the name and subtitle as proposed.
    - The keyword field has 100 characters, commas without spaces, and no words already used in the name or
      subtitle.
