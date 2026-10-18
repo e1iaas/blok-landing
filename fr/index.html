@@ -44,7 +44,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="image" href="../assets/parent-home-sv.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
@@ -117,7 +116,7 @@
       "name": "Comment bloquer à distance l'iPhone de mon enfant ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Installez Blok sur votre iPhone et sur celui de votre enfant, puis associez-les avec un code. Appuyez ensuite sur LOCK dans l'app sur votre téléphone : les applications choisies sont bloquées sur le téléphone de votre enfant. Vous pouvez bloquer jusqu'à nouvel ordre, pendant une durée définie ou selon des horaires."
+        "text": "Installez Blok sur votre iPhone et sur celui de votre enfant, puis associez-les avec un code. Appuyez ensuite sur VERROUILLER dans l'app sur votre téléphone : les applications choisies sont bloquées sur le téléphone de votre enfant. Vous pouvez bloquer jusqu'à nouvel ordre, pendant une durée définie ou selon des horaires."
       }
     },
     {
@@ -261,10 +260,41 @@
 
   /* Phone */
   .phone { width: 100%; max-width: 310px; aspect-ratio: 640 / 1392; border-radius: 44px; background: #111; padding: 9px; box-shadow: 0 30px 60px -20px rgba(51, 43, 66, .35); position: relative; margin: 0 auto; }
-  .phone img { position: absolute; inset: 9px; width: calc(100% - 18px); height: calc(100% - 18px); object-fit: cover; border-radius: 36px; transition: opacity .5s ease; }
-  .phone img.locked { opacity: 0; }
   .hero-phones { position: relative; }
-  .hero-phones.is-locked .phone img.locked { opacity: 1; }
+  /* The mockup screen: sizes in cqw (1cqw = 1% of the screen width) so it scales with the phone. */
+  .screen { position: absolute; inset: 9px; border-radius: 36px; overflow: hidden; background: #F1F1F6; color: var(--ink); container-type: inline-size; font-family: -apple-system, "SF Pro Text", system-ui, sans-serif; text-align: center; line-height: 1.2; }
+  .screen svg { display: block; }
+  .hero-phones:not(.is-locked) .st-locked, .hero-phones.is-locked .st-open { display: none !important; }
+  .sb { display: flex; align-items: center; justify-content: space-between; height: 15.5cqw; padding-inline: 13cqw 8.5cqw; font-weight: 600; font-size: 4.1cqw; }
+  .island { position: absolute; top: 3.4cqw; left: 50%; width: 31.25cqw; height: 9cqw; margin-left: -15.6cqw; border-radius: 4.5cqw; background: #000; }
+  .sb-icons { width: 19.5cqw; fill: currentColor; }
+  .app-head { position: relative; height: 11cqw; display: grid; place-items: center; font-size: 4.1cqw; }
+  .gear { position: absolute; inset-inline-end: 4cqw; top: 0; width: 11cqw; height: 11cqw; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 1cqw 3cqw rgba(51, 43, 66, .08); }
+  .gear svg { width: 5.6cqw; fill: none; stroke: var(--plum); stroke-width: 1.8; }
+  .device { margin-top: 6.5cqw; display: grid; justify-items: center; gap: 1.2cqw; }
+  .device b { font-size: 4.7cqw; }
+  .conn { display: flex; align-items: center; gap: 1.4cqw; font-size: 2.85cqw; color: var(--muted); }
+  .conn i, .pill i { width: 1.7cqw; height: 1.7cqw; border-radius: 50%; background: #4CAF6A; }
+  .big { width: 52cqw; height: 52cqw; margin: 7cqw auto 0; border-radius: 50%; background: var(--blue); color: #fff; display: grid; place-content: center; justify-items: center; gap: 3cqw; box-shadow: 0 0 16cqw 2cqw rgba(84, 140, 217, .22); transition: background .5s, box-shadow .5s; }
+  .is-locked .big { background: var(--plum); box-shadow: 0 0 16cqw 2cqw rgba(102, 71, 120, .2); }
+  .padlock { width: 7.8cqw; }
+  .big-label { font-weight: 700; font-size: 4.7cqw; letter-spacing: .02em; }
+  .big-locked { font-weight: 600; font-size: 3.4cqw; max-width: 42cqw; }
+  .pill { display: inline-flex; align-items: center; height: 8.75cqw; margin-top: 4.5cqw; padding-inline: 4cqw; border-radius: 99px; background: #fff; font-size: 3.3cqw; font-weight: 700; color: var(--blue); }
+  .pill > span { display: inline-flex; align-items: center; gap: 1.6cqw; }
+  .pill i { background: var(--blue); }
+  .is-locked .pill { color: var(--muted); font-weight: 500; }
+  .pill svg { width: 3.8cqw; fill: none; stroke: var(--plum); stroke-width: 2.2; stroke-linecap: round; }
+  .pill b { color: var(--plum); }
+  .row { display: flex; align-items: center; gap: 3.3cqw; margin: 3cqw 5cqw 0; height: 16.6cqw; padding-inline: 3.6cqw 4.5cqw; border-radius: 6.5cqw; background: #fff; text-align: start; }
+  .pill + .row { margin-top: 10.6cqw; }
+  .tile { flex: none; width: 10cqw; height: 10cqw; border-radius: 2.5cqw; background: #EDEDF0; display: grid; place-items: center; }
+  .tile svg { width: 4.6cqw; fill: none; stroke: var(--plum); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .row-text { flex: 1; display: grid; gap: .6cqw; min-width: 0; }
+  .row-text b { font-size: 4.1cqw; font-weight: 600; }
+  .row-text small { font-size: 3cqw; color: var(--muted); }
+  .chev { width: 4.2cqw; fill: none; stroke: var(--muted); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  [dir="rtl"] .chev { transform: scaleX(-1); }
   .glow { position: absolute; inset: 8% -6%; border-radius: 50%; background: radial-gradient(closest-side, rgba(84, 140, 217, .28), transparent); transition: background .5s; z-index: -1; }
   .hero-phones.is-locked .glow { background: radial-gradient(closest-side, rgba(102, 71, 120, .3), transparent); }
   .try { margin-top: 20px; display: flex; justify-content: center; }
@@ -336,7 +366,7 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .js .reveal { opacity: 1; transform: none; transition: none; }
-    .phone img, .glow { transition: none; }
+    .big, .glow { transition: none; }
   }
 
   /* Tablet and phone */
@@ -358,7 +388,7 @@
     .cta { flex-direction: column; margin-top: 24px; }
     .btn { width: 100%; }
     .phone { max-width: 240px; border-radius: 36px; padding: 7px; }
-    .phone img { inset: 7px; width: calc(100% - 14px); height: calc(100% - 14px); border-radius: 30px; }
+    .screen { inset: 7px; border-radius: 30px; }
     section { padding: 56px 0; }
     .tight { padding-top: 8px; }
     .section-head { margin-bottom: 28px; }
@@ -403,7 +433,7 @@
         </h1>
         <p class="lead">
 
-          Un appui sur LOCK et les applications choisies sont bloquées sur l'iPhone de votre enfant. Repas, devoirs ou coucher : c'est vous qui décidez quand faire une pause d'écran.
+          Un appui sur VERROUILLER et les applications choisies sont bloquées sur l'iPhone de votre enfant. Repas, devoirs ou coucher : c'est vous qui décidez quand faire une pause d'écran.
         </p>
         <div class="cta">
           <!-- Before launch: "coming soon"; after (APP_STORE_ID in build.py): a link to the App Store. -->
@@ -424,8 +454,18 @@
         <div class="hero-phones" id="heroPhones">
           <div class="glow"></div>
           <div class="phone">
-            <img class="open" src="../assets/parent-home-sv.jpg" width="640" height="1392" fetchpriority="high" alt="Blok sur l&#x27;iPhone du parent : le bouton bleu LOCK, le téléphone de l&#x27;enfant est déverrouillé">
-            <img class="locked" src="../assets/parent-home-locked-sv.jpg" width="640" height="1392" loading="lazy" alt="Blok sur l&#x27;iPhone du parent : le bouton est prune et le téléphone de l&#x27;enfant est bloqué jusqu&#x27;à 13:22">
+            <!-- The parent's home screen in Blok, drawn in HTML so it shows each page's language. -->
+            <div class="screen" aria-hidden="true">
+              <div class="sb"><span class="sb-time"><span class="st-open">12:21</span><span class="st-locked">12:22</span></span><span class="island"></span><svg class="sb-icons" viewBox="0 0 64 14"><circle cx="2" cy="7" r="1.6"/><circle cx="7" cy="7" r="1.6"/><circle cx="12" cy="7" r="1.6"/><circle cx="17" cy="7" r="1.6"/><path d="M33 12.6l-2.3-2.4a3.3 3.3 0 0 1 4.6 0zM28.3 7.8a6.7 6.7 0 0 1 9.4 0l-1.6 1.7a4.4 4.4 0 0 0-6.2 0zM25.9 5.3a10 10 0 0 1 14.2 0l-1.6 1.7a7.7 7.7 0 0 0-11 0z"/><rect x="45" y="2.5" width="16" height="9" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/><rect x="46.6" y="4.1" width="12.8" height="5.8" rx="1.4"/><path d="M62.3 5.6v2.8c.8-.3.8-2.5 0-2.8z" opacity=".45"/></svg></div>
+              <div class="app-head"><b>Blok</b><span class="gear"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></span></div>
+              <div class="device"><b>iPhone d'Elsa</b><span class="conn"><i></i>Connecté</span></div>
+              <div class="big"><svg class="padlock" viewBox="0 0 26 34" aria-hidden="true"><path d="M6 15V10a7 7 0 0 1 14 0v5" fill="none" stroke="#fff" stroke-width="3.6"/><rect x="1" y="14" width="24" height="19" rx="4" fill="#fff"/></svg><span class="st-open big-label">VERROUILLER</span><span class="st-locked big-locked">Le téléphone est verrouillé</span></div>
+              <div class="pill"><span class="st-open"><i></i>Déverrouillé</span><span class="st-locked"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l-3 2"/></svg><b>Verrouillé</b> · déverrouillage à 13:22</span></div>
+              <div class="row"><span class="tile"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M3 9.5h18M8 13h.01M12 13h.01M16 13h.01M8 16.5h.01M12 16.5h.01M16 16.5h.01"/></svg></span><span class="row-text"><b>Planning</b><small>Aucun pour l'instant</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></div>
+              <div class="row"><span class="tile"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg></span><span class="row-text"><b>Apps autorisées</b><small>Sur le téléphone de l'enfant</small></span></div>
+            </div>
+            <span class="sr st-open">Blok sur l'iPhone du parent : le bouton bleu VERROUILLER, le téléphone de l'enfant est déverrouillé</span>
+            <span class="sr st-locked">Blok sur l'iPhone du parent : le bouton est prune et le téléphone de l'enfant est bloqué jusqu'à 13:22</span>
           </div>
         </div>
         <div class="try">
@@ -486,7 +526,7 @@
         </li>
         <li class="panel reveal">
           <div class="num" aria-hidden="true">3</div>
-          <h3>Appuyez sur LOCK</h3>
+          <h3>Appuyez sur VERROUILLER</h3>
           <p>Où que vous soyez. Débloquez tout aussi facilement, ou laissez un blocage minuté le faire pour vous.</p>
         </li>
       </ol>
@@ -564,7 +604,7 @@
       <div class="faq">
         <details class="reveal">
           <summary>Comment bloquer à distance l'iPhone de mon enfant ?</summary>
-          <p>Installez Blok sur votre iPhone et sur celui de votre enfant, puis associez-les avec un code. Appuyez ensuite sur LOCK dans l'app sur votre téléphone : les applications choisies sont bloquées sur le téléphone de votre enfant. Vous pouvez bloquer jusqu'à nouvel ordre, pendant une durée définie ou selon des horaires.</p>
+          <p>Installez Blok sur votre iPhone et sur celui de votre enfant, puis associez-les avec un code. Appuyez ensuite sur VERROUILLER dans l'app sur votre téléphone : les applications choisies sont bloquées sur le téléphone de votre enfant. Vous pouvez bloquer jusqu'à nouvel ordre, pendant une durée définie ou selon des horaires.</p>
         </details>
         <details class="reveal">
           <summary>En combien de temps le blocage s'applique-t-il ?</summary>
