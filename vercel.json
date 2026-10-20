@@ -23,5 +23,19 @@
       "destination": "https://blokapp.app/:path*",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/policy",
+      "destination": "/en/privacy"
+    },
+    {
+      "source": "/sv/policy",
+      "destination": "/privacy"
+    },
+    {
+      "source": "/:lang(en|da|de|el|es|fr|hr|it|hu|nl|no|pl|fi|tr|ar)/policy",
+      "destination": "/:lang/privacy"
+    }
   ]
 }
