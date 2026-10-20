@@ -13,8 +13,8 @@ This writes the Swedish pages at the root (`index.html`, `privacy.html`, `suppor
 the other 14 languages in their own folders (`da/`, `de/`, `el/`, `es/`, `fr/`, `hr/`, `it/`, `hu/`, `nl/`,
 `no/`, `pl/`, `fi/`, `tr/`, `ar/`), plus `sitemap.xml`, `robots.txt` and `llms.txt` (from `src/llms.txt`).
 Vercel serves the pages without `.html` (`/support`, `/de/privacy`; `cleanUrls` in `vercel.json`), and every
-link the build writes uses those clean URLs. `/policy` serves the English privacy policy (for App Store Connect), and
-`/<lang>/policy` that language's, through rewrites in `vercel.json`. Arabic pages get `dir="rtl"` (`RTL` in `build.py`); the CSS uses
+link the build writes uses those clean URLs. `/policy` redirects to the English privacy policy (for App Store Connect), and
+`/<lang>/policy` to that language's (redirects in `vercel.json`). Arabic pages get `dir="rtl"` (`RTL` in `build.py`); the CSS uses
 logical properties (`margin-inline-start`, `inset-inline-end`) so the layout mirrors on its own.
 Commit everything and push; Vercel publishes in about a minute.
 
