@@ -62,6 +62,8 @@ LANGS = {
 RTL = {"ar"}
 SOURCE_LANGS = ("sv", "en")
 PAGES = ["index.html", "privacy.html", "support.html"]
+# English-only articles, built to en/guides/<name> (no translations yet, so no hreflang alternates).
+GUIDES = sorted(f"guides/{p.name}" for p in (Path(__file__).parent / "src" / "guides").glob("*.html"))
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 JSONLD_TEXT = {"alternateName", "description", "applicationSubCategory", "operatingSystem", "featureList"}
 ROOT = Path(__file__).parent
@@ -119,6 +121,8 @@ class LanguageFilter(HTMLParser):
         lang, when = a.get("lang"), a.get("data-when")
         if tag != "html" and lang in SOURCE_LANGS and lang != self.text_lang:
             return True
+        if a.get("data-only", self.lang) != self.lang:   # e.g. the guide links, English pages only
+            return True
         if self.every_variant:   # collecting strings: keep the before- and after-launch texts both
             return False
         if when == "launched" and not APP_STORE_ID or when == "soon" and APP_STORE_ID:
@@ -128,6 +132,7 @@ class LanguageFilter(HTMLParser):
     def start_tag_text(self, tag, attrs, close=False):
         a = dict(attrs)
         a.pop("data-when", None)
+        a.pop("data-only", None)
         english_alt = a.pop("data-alt-en", None)
         if a.get("lang") in SOURCE_LANGS:
             if a.get("property") == "og:locale":
@@ -279,7 +284,7 @@ def build_page(page, lang, translate):
         "{{LANG}}": lang,
         "{{LANG_CODE}}": lang.upper(),
         "{{DIR}}": "rtl" if lang in RTL else "ltr",
-        "{{ROOT}}": "../" if LANGS[lang][1] else "",
+        "{{ROOT}}": "../" * (bool(LANGS[lang][1]) + page.count("/")),
         "{{BASE}}": BASE,
         "{{HOME}}": url(lang, "index.html"),
         "{{CANON}}": url(lang, page),
@@ -313,6 +318,7 @@ def sitemap():
         priority = "1.0" if page == "index.html" else "0.5"
         for lang in LANGS:
             rows.append(f"  <url>\n    <loc>{url(lang, page)}</loc>\n    <lastmod>{today}</lastmod>\n    <priority>{priority}</priority>{alts}\n  </url>")
+    rows += [f"  <url>\n    <loc>{url('en', g)}</loc>\n    <lastmod>{today}</lastmod>\n    <priority>0.8</priority>\n  </url>" for g in GUIDES]
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
             + "\n".join(rows) + "\n</urlset>\n")
@@ -328,6 +334,9 @@ if __name__ == "__main__":
         t = english if lang == "en" else Translator(lang)
         for page in PAGES:
             build_page(page, lang, t)
+        if lang == "en":
+            for guide in GUIDES:
+                build_page(guide, "en", Translator("en"))   # own Translator: guide texts stay out of strings.json
         missing = sorted(set(t.missing))
         print(f"{lang}: built" + (f", {len(missing)} strings untranslated (English shown)" if missing else ""))
     (ROOT / "i18n").mkdir(exist_ok=True)

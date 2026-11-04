@@ -50,4 +50,12 @@ footer a:hover { color: var(--ink); }
   .table tr { display: block; border-top: 1px solid var(--line); padding: 10px 0; }
   .table td { display: block; border: 0; padding: 2px 0; }
   .table td:first-child { font-weight: 700; }
+  .compare td:nth-child(2)::before { content: "Screen Time: "; color: var(--muted); }
+  .compare td:nth-child(3)::before { content: "Blok: "; color: var(--muted); }
 }
+.card ol { padding-inline-start: 22px; }
+.card ol li { margin: 6px 0; }
+.faq details { border-top: 1px solid var(--line); padding: 4px 0; }
+.faq summary { cursor: pointer; font-weight: 700; padding: 10px 0; }
+.faq details p { color: var(--muted); padding-bottom: 10px; }
+.more-guides { margin-top: 24px; color: var(--muted); }
