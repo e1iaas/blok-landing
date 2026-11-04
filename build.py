@@ -35,7 +35,7 @@ DOMAIN = "blokapp.app"
 BASE = f"https://{DOMAIN}/" if DOMAIN else "https://e1iaas.github.io/blok-landing/"
 # The numeric App Store id (apps.apple.com/.../id1234567890). Set at launch: the CTAs become App Store
 # links to each language's storefront, and the Smart App Banner and JSON-LD downloadUrl are added.
-APP_STORE_ID = None
+APP_STORE_ID = 6822641160
 # App Store Connect's campaign provider token (Analytics > Campaigns). Set: the website's buttons carry
 # ct=web-<lang>, so App Store Connect shows installs per language page.
 CAMPAIGN_PROVIDER_TOKEN = None
