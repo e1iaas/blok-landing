@@ -62,8 +62,10 @@ LANGS = {
 RTL = {"ar"}
 SOURCE_LANGS = ("sv", "en")
 PAGES = ["index.html", "privacy.html", "support.html"]
-# English-only articles, built to en/guides/<name> (no translations yet, so no hreflang alternates).
-GUIDES = sorted(f"guides/{p.name}" for p in (Path(__file__).parent / "src" / "guides").glob("*.html"))
+# Articles, written per language in src/guides/<lang>/<name>.html (English is the original); built to
+# <lang folder>/guides/<name>, linked with hreflang to the languages that have that guide.
+GUIDES = {g.name: [l for l in LANGS if (g.parent.parent / l / g.name).exists()]
+          for g in sorted((Path(__file__).parent / "src" / "guides" / "en").glob("*.html"))}
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 JSONLD_TEXT = {"alternateName", "description", "applicationSubCategory", "operatingSystem", "featureList"}
 ROOT = Path(__file__).parent
@@ -121,8 +123,6 @@ class LanguageFilter(HTMLParser):
         lang, when = a.get("lang"), a.get("data-when")
         if tag != "html" and lang in SOURCE_LANGS and lang != self.text_lang:
             return True
-        if a.get("data-only", self.lang) != self.lang:   # e.g. the guide links, English pages only
-            return True
         if self.every_variant:   # collecting strings: keep the before- and after-launch texts both
             return False
         if when == "launched" and not APP_STORE_ID or when == "soon" and APP_STORE_ID:
@@ -132,7 +132,6 @@ class LanguageFilter(HTMLParser):
     def start_tag_text(self, tag, attrs, close=False):
         a = dict(attrs)
         a.pop("data-when", None)
-        a.pop("data-only", None)
         english_alt = a.pop("data-alt-en", None)
         if a.get("lang") in SOURCE_LANGS:
             if a.get("property") == "og:locale":
@@ -209,7 +208,7 @@ def url(lang, page):
 
 
 def relative(from_lang, to_lang, page):
-    target = ("../" if LANGS[from_lang][1] else "") + path(to_lang, page)
+    target = "../" * (bool(LANGS[from_lang][1]) + page.count("/")) + path(to_lang, page)
     return target or "./"
 
 
@@ -265,8 +264,8 @@ def finish_jsonld(out, lang, translate, page):
     return re.sub(r'(<script type="application/ld\+json"[^>]*>)(.*?)</script>', fix, out, flags=re.S)
 
 
-def build_page(page, lang, translate):
-    source = (ROOT / "src" / page).read_text(encoding="utf-8")
+def build_page(page, lang, translate, source=None, langs=LANGS):
+    source = (ROOT / "src" / (source or page)).read_text(encoding="utf-8")
     source = re.sub(r"<!--\s*Source page\..*?-->\n", "", source, count=1, flags=re.S)
     f = LanguageFilter(lang, translate, page)
     f.feed(source)
@@ -276,9 +275,9 @@ def build_page(page, lang, translate):
         f'<a href="{relative(lang, l, page)}" hreflang="{l}" lang="{l}"'
         + (' aria-current="page"' if l == lang else "")
         + f">{LANGS[l][0]}</a>"
-        for l in LANGS
+        for l in langs
     )
-    hreflang = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{url(l, page)}">' for l in LANGS)
+    hreflang = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{url(l, page)}">' for l in langs)
     hreflang += f'\n<link rel="alternate" hreflang="x-default" href="{url("en", page)}">'
     values = {
         "{{LANG}}": lang,
@@ -318,7 +317,11 @@ def sitemap():
         priority = "1.0" if page == "index.html" else "0.5"
         for lang in LANGS:
             rows.append(f"  <url>\n    <loc>{url(lang, page)}</loc>\n    <lastmod>{today}</lastmod>\n    <priority>{priority}</priority>{alts}\n  </url>")
-    rows += [f"  <url>\n    <loc>{url('en', g)}</loc>\n    <lastmod>{today}</lastmod>\n    <priority>0.8</priority>\n  </url>" for g in GUIDES]
+    for name, langs in GUIDES.items():
+        page = f"guides/{name}"
+        alts = "".join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{url(l, page)}"/>' for l in langs)
+        alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{url("en", page)}"/>'
+        rows += [f"  <url>\n    <loc>{url(l, page)}</loc>\n    <lastmod>{today}</lastmod>\n    <priority>0.8</priority>{alts}\n  </url>" for l in langs]
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
             + "\n".join(rows) + "\n</urlset>\n")
@@ -334,11 +337,12 @@ if __name__ == "__main__":
         t = english if lang == "en" else Translator(lang)
         for page in PAGES:
             build_page(page, lang, t)
-        if lang == "en":
-            for guide in GUIDES:
-                build_page(guide, "en", Translator("en"))   # own Translator: guide texts stay out of strings.json
         missing = sorted(set(t.missing))
         print(f"{lang}: built" + (f", {len(missing)} strings untranslated (English shown)" if missing else ""))
+    for name, langs in GUIDES.items():   # written per language, so nothing to translate (own Translator)
+        for lang in langs:
+            build_page(f"guides/{name}", lang, Translator("en"), source=f"guides/{lang}/{name}", langs=langs)
+    print("guides:", {name: len(langs) for name, langs in GUIDES.items()})
     (ROOT / "i18n").mkdir(exist_ok=True)
     (ROOT / "i18n" / "strings.json").write_text(
         json.dumps(english.seen, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

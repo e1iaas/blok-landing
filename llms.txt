@@ -33,6 +33,7 @@ Several unrelated apps are also called "Blok" or "Blok"-something, most of them 
 - [How to lock your child's iPhone remotely](https://blokapp.app/en/guides/lock-childs-iphone)
 - [How to block TikTok, YouTube and games on your child's iPhone](https://blokapp.app/en/guides/block-apps-child-iphone)
 - [Apple Screen Time vs Blok](https://blokapp.app/en/guides/screen-time-vs-blok)
+- The same guides in every site language, at <language>/guides/<name>, e.g. https://blokapp.app/de/guides/lock-childs-iphone
 
 ## Contact
 

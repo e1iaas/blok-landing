@@ -25,6 +25,13 @@ translation. The build writes every English string to `i18n/strings.json` and re
 untranslated (those show in English). After changing English text in `src/`, add the new strings to each
 `i18n/<lang>.json` and check a language with `python3 i18n/check.py de`.
 
+## Guides
+
+Articles for parents are written per language in `src/guides/<lang>/<name>.html` (`en/` is the original; Swedish
+pages go to `/guides/`, others to `/<lang>/guides/`). The build links every language version of a guide with
+hreflang and adds them to the sitemap. Check a translation against the English with
+`python3 i18n/check_guides.py de`.
+
 ## Settings in build.py
 
 - `DOMAIN`: the site's domain; switches every URL and writes `CNAME` (so GitHub Pages redirects the old github.io URLs).
