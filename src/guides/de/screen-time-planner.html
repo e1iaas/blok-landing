@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-src-only>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bildschirmzeit-Planer für Kinder: Kostenloser Rechner nach Alter</title>
+<meta name="description" content="Kostenloser Bildschirmzeit-Rechner für Eltern: Alter, Schulzeiten und Schlafenszeit deines Kindes eingeben und ein Tageslimit plus Sperrplan zum Ausdrucken erhalten.">
+<link rel="canonical" href="{{CANON}}">
+{{HREFLANG}}
+<meta name="theme-color" content="#F2F2F5">
+<meta name="apple-itunes-app" content="app-id={{APP_STORE_ID}}" data-when="launched">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blok">
+<meta property="og:url" content="{{CANON}}">
+<meta property="og:title" content="Bildschirmzeit-Planer für Kinder">
+<meta property="og:image" content="{{BASE}}assets/og-en.jpg">
+<link rel="icon" href="{{ROOT}}assets/favicon.png">
+<link rel="stylesheet" href="{{ROOT}}assets/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bildschirmzeit-Planer für Kinder",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "isAccessibleForFree": true,
+  "inLanguage": "de",
+  "url": "{{CANON}}",
+  "publisher": { "@id": "{{BASE}}#org" }
+}
+</script>
+<!--FAQ_JSONLD-->
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../"><img src="{{ROOT}}assets/icon.png" alt="" width="32" height="32">Blok</a>
+    <details class="lang"><summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Sprache:</span> {{LANG_CODE}}</summary><div class="lang-menu">{{LANG_SWITCH}}</div></details>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Bildschirmzeit-Planer für Kinder</h1>
+  <p class="intro">Gib das Alter deines Kindes, die Schulzeiten und die Schlafenszeit ein. Der Planer nennt dir ein tägliches Bildschirmzeit-Limit nach den Empfehlungen der schwedischen Gesundheitsbehörde und einen Sperrplan für Schule und Nacht, den du ausdrucken und an den Kühlschrank hängen kannst.</p>
+
+  <form class="card planner" id="planner">
+    <label>Alter des Kindes <select id="age"><option>6</option><option>7</option><option>8</option><option>9</option><option selected>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option></select></label>
+    <label>Schule beginnt <input type="time" id="school-start" value="08:00"></label>
+    <label>Schule endet <input type="time" id="school-end" value="15:00"></label>
+    <label>Schlafenszeit <input type="time" id="bedtime" value="21:00"></label>
+    <label>Aufstehen <input type="time" id="wake" value="07:00"></label>
+    <label>Bildschirme aus vor dem Schlafen <select id="wind-down"><option value="30" selected>30 Min.</option><option value="60">60 Min.</option></select></label>
+  </form>
+
+  <div class="card plan" id="plan" aria-live="polite">
+    <h2>Der Bildschirmzeit-Plan deiner Familie</h2>
+    <ul>
+      <li>Bildschirmzeit in der Freizeit pro Tag: <strong id="rec-young">höchstens 1–2 Stunden</strong><strong id="rec-teen" hidden>höchstens 2–3 Stunden</strong></li>
+      <li>Schulsperre, werktags: <strong><span id="school">08:00–15:00</span></strong></li>
+      <li>Nachtsperre, jeden Abend: <strong><span id="night">20:30–07:00</span></strong></li>
+      <li>Freizeit nach der Schule: <strong><span id="free">5.5</span> Std.</strong>, davon höchstens <strong><span id="max">2</span> Std.</strong> am Bildschirm</li>
+    </ul>
+    <p id="tip">Das ist viel freie Zeit. Eine Hausaufgaben-Sperre, zum Beispiel in der ersten Stunde nach der Schule, macht das Limit leichter einzuhalten.</p>
+    <p>Telefon und Nachrichten können während jeder Sperre offen bleiben, damit dein Kind dich immer erreichen kann.</p>
+    <button type="button" class="btn" id="print">Plan ausdrucken</button>
+  </div>
+
+  <div class="card">
+    <h2>Den Plan aufs iPhone deines Kindes bringen</h2>
+    <p>Blok: Kindersicherung sperrt die ausgewählten Apps auf dem iPhone deines Kindes nach Zeitplänen für Schule und Schlafenszeit und per Tipp von deinem eigenen Handy für Abendessen und Hausaufgaben. Kein Tracking, und Blok liest keine Nachrichten.</p>
+    <a class="btn" href="{{STORE_URL}}" data-when="launched">Blok im App Store laden</a>
+  </div>
+
+  <div class="card faq">
+    <h2>Häufige Fragen</h2>
+    <details>
+      <summary>Woher kommen die Zahlen zur Bildschirmzeit?</summary>
+      <p>Von Folkhälsomyndigheten, der schwedischen Gesundheitsbehörde, 2024: höchstens 1 bis 2 Stunden Bildschirmzeit in der Freizeit pro Tag für 6- bis 12-Jährige und 2 bis 3 Stunden für 13- bis 18-Jährige. Schularbeiten, Musik, Podcasts und E-Books zählen nicht mit.</p>
+    </details>
+    <details>
+      <summary>Werden meine Daten irgendwo gespeichert?</summary>
+      <p>Nein. Der Planer läuft komplett in deinem Browser. Nichts, was du eingibst, wird verschickt oder gespeichert.</p>
+    </details>
+  </div>
+
+  <p class="more-guides">Weitere Ratgeber: <a href="screen-time-by-age">Wie viel Bildschirmzeit nach Alter?</a> · <a href="first-iphone-for-child">Das erste iPhone fürs Kind einrichten</a> · <a href="best-parental-control-apps-iphone">Die besten Apps zur Kindersicherung fürs iPhone</a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Blok</span>
+    <a href="../">Startseite</a>
+    <a href="../privacy">Datenschutzerklärung</a>
+    <a href="../support">Support</a>
+  </div>
+</footer>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const min = id => { const [h, m] = $(id).value.split(":").map(Number); return h * 60 + m; };
+  const clock = m => { m = (m % 1440 + 1440) % 1440; return String(m / 60 | 0).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0"); };
+  const hours = new Intl.NumberFormat(document.documentElement.lang + "-u-nu-latn", { maximumFractionDigits: 1 });
+  function update() {
+    if (["school-start", "school-end", "bedtime", "wake"].some(id => !$(id).value)) return;
+    const teen = +$("age").value >= 13, max = teen ? 3 : 2;
+    const nightStart = min("bedtime") - +$("wind-down").value;
+    const free = Math.max(0, (nightStart - min("school-end") + 1440) % 1440) / 60;
+    $("rec-young").hidden = teen;
+    $("rec-teen").hidden = !teen;
+    $("school").textContent = clock(min("school-start")) + "–" + clock(min("school-end"));
+    $("night").textContent = clock(nightStart) + "–" + clock(min("wake"));
+    $("free").textContent = hours.format(free);
+    $("max").textContent = hours.format(max);
+    $("tip").hidden = free < max + 2;
+  }
+  $("planner").addEventListener("input", update);
+  $("print").addEventListener("click", () => print());
+  update();
+})();
+</script>
+</body>
+</html>

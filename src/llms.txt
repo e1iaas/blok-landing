@@ -30,6 +30,10 @@ Several unrelated apps are also called "Blok" or "Blok"-something, most of them 
 
 ## Guides
 
+- [Screen time planner for kids (free tool)]({{BASE}}en/guides/screen-time-planner)
+- [Best parental control apps for iPhone (2026)]({{BASE}}en/guides/best-parental-control-apps-iphone)
+- [How much screen time by age?]({{BASE}}en/guides/screen-time-by-age)
+- [Your child's first iPhone: a setup checklist]({{BASE}}en/guides/first-iphone-for-child)
 - [How to lock your child's iPhone remotely]({{BASE}}en/guides/lock-childs-iphone)
 - [How to block TikTok, YouTube and games on your child's iPhone]({{BASE}}en/guides/block-apps-child-iphone)
 - [Apple Screen Time vs Blok]({{BASE}}en/guides/screen-time-vs-blok)

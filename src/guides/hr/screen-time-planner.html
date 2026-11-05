@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-src-only>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planer vremena pred ekranom za djecu: kalkulator prema dobi</title>
+<meta name="description" content="Besplatan kalkulator vremena pred ekranom: upiši djetetovu dob, školski raspored i vrijeme spavanja i dobij dnevno ograničenje i raspored zaključavanja za ispis.">
+<link rel="canonical" href="{{CANON}}">
+{{HREFLANG}}
+<meta name="theme-color" content="#F2F2F5">
+<meta name="apple-itunes-app" content="app-id={{APP_STORE_ID}}" data-when="launched">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blok">
+<meta property="og:url" content="{{CANON}}">
+<meta property="og:title" content="Planer vremena pred ekranom za djecu">
+<meta property="og:image" content="{{BASE}}assets/og-en.jpg">
+<link rel="icon" href="{{ROOT}}assets/favicon.png">
+<link rel="stylesheet" href="{{ROOT}}assets/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Planer vremena pred ekranom za djecu",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "isAccessibleForFree": true,
+  "inLanguage": "hr",
+  "url": "{{CANON}}",
+  "publisher": { "@id": "{{BASE}}#org" }
+}
+</script>
+<!--FAQ_JSONLD-->
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../"><img src="{{ROOT}}assets/icon.png" alt="" width="32" height="32">Blok</a>
+    <details class="lang"><summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Jezik:</span> {{LANG_CODE}}</summary><div class="lang-menu">{{LANG_SWITCH}}</div></details>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Planer vremena pred ekranom za djecu</h1>
+  <p class="intro">Upiši djetetovu dob, školski raspored i vrijeme spavanja. Planer ti daje dnevno ograničenje vremena pred ekranom prema preporukama Švedske agencije za javno zdravstvo te raspored zaključavanja za školu i spavanje koji možeš ispisati i staviti na hladnjak.</p>
+
+  <form class="card planner" id="planner">
+    <label>Djetetova dob <select id="age"><option>6</option><option>7</option><option>8</option><option>9</option><option selected>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option></select></label>
+    <label>Škola počinje <input type="time" id="school-start" value="08:00"></label>
+    <label>Škola završava <input type="time" id="school-end" value="15:00"></label>
+    <label>Vrijeme spavanja <input type="time" id="bedtime" value="21:00"></label>
+    <label>Buđenje <input type="time" id="wake" value="07:00"></label>
+    <label>Bez ekrana prije spavanja <select id="wind-down"><option value="30" selected>30 min</option><option value="60">60 min</option></select></label>
+  </form>
+
+  <div class="card plan" id="plan" aria-live="polite">
+    <h2>Plan vremena pred ekranom za tvoju obitelj</h2>
+    <ul>
+      <li>Slobodno vrijeme pred ekranom dnevno: <strong id="rec-young">najviše 1–2 sata</strong><strong id="rec-teen" hidden>najviše 2–3 sata</strong></li>
+      <li>Školsko zaključavanje, radnim danom: <strong><span id="school">08:00–15:00</span></strong></li>
+      <li>Noćno zaključavanje, svake večeri: <strong><span id="night">20:30–07:00</span></strong></li>
+      <li>Slobodno vrijeme nakon škole: <strong><span id="free">5.5</span> h</strong>, od toga najviše <strong><span id="max">2</span> h</strong> pred ekranom</li>
+    </ul>
+    <p id="tip">To je puno slobodnog vremena. Zaključavanje za zadaću, primjerice prvi sat nakon škole, olakšava držanje ograničenja.</p>
+    <p>Telefon i Poruke mogu ostati otvoreni tijekom svakog zaključavanja, kako bi te dijete uvijek moglo dobiti.</p>
+    <button type="button" class="btn" id="print">Ispiši plan</button>
+  </div>
+
+  <div class="card">
+    <h2>Prenesi plan na djetetov iPhone</h2>
+    <p>Blok: Roditeljski nadzor zaključava odabrane aplikacije na djetetovu iPhoneu prema rasporedu za školu i spavanje, a za večeru i zadaću jednim dodirom s tvog mobitela. Bez praćenja i bez čitanja poruka.</p>
+    <a class="btn" href="{{STORE_URL}}" data-when="launched">Preuzmi Blok u App Storeu</a>
+  </div>
+
+  <div class="card faq">
+    <h2>Pitanja</h2>
+    <details>
+      <summary>Odakle dolaze brojke o vremenu pred ekranom?</summary>
+      <p>Od Folkhälsomyndigheten, Švedske agencije za javno zdravstvo, 2024.: najviše 1 do 2 sata slobodnog vremena pred ekranom dnevno za djecu od 6 do 12 godina i 2 do 3 sata za dob od 13 do 18 godina. Školske obveze, glazba, podcasti i e-knjige se ne ubrajaju.</p>
+    </details>
+    <details>
+      <summary>Spremaju li se moji podaci negdje?</summary>
+      <p>Ne. Planer radi u potpunosti u tvom pregledniku. Ništa što upišeš ne šalje se niti sprema.</p>
+    </details>
+  </div>
+
+  <p class="more-guides">Još vodiča: <a href="screen-time-by-age">Koliko vremena pred ekranom prema dobi?</a> · <a href="first-iphone-for-child">Prvi iPhone za dijete: kako ga postaviti</a> · <a href="best-parental-control-apps-iphone">Najbolje aplikacije za roditeljski nadzor na iPhoneu</a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Blok</span>
+    <a href="../">Početna</a>
+    <a href="../privacy">Pravila o privatnosti</a>
+    <a href="../support">Podrška</a>
+  </div>
+</footer>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const min = id => { const [h, m] = $(id).value.split(":").map(Number); return h * 60 + m; };
+  const clock = m => { m = (m % 1440 + 1440) % 1440; return String(m / 60 | 0).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0"); };
+  const hours = new Intl.NumberFormat(document.documentElement.lang + "-u-nu-latn", { maximumFractionDigits: 1 });
+  function update() {
+    if (["school-start", "school-end", "bedtime", "wake"].some(id => !$(id).value)) return;
+    const teen = +$("age").value >= 13, max = teen ? 3 : 2;
+    const nightStart = min("bedtime") - +$("wind-down").value;
+    const free = Math.max(0, (nightStart - min("school-end") + 1440) % 1440) / 60;
+    $("rec-young").hidden = teen;
+    $("rec-teen").hidden = !teen;
+    $("school").textContent = clock(min("school-start")) + "–" + clock(min("school-end"));
+    $("night").textContent = clock(nightStart) + "–" + clock(min("wake"));
+    $("free").textContent = hours.format(free);
+    $("max").textContent = hours.format(max);
+    $("tip").hidden = free < max + 2;
+  }
+  $("planner").addEventListener("input", update);
+  $("print").addEventListener("click", () => print());
+  update();
+})();
+</script>
+</body>
+</html>

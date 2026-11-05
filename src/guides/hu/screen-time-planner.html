@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-src-only>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Képernyőidő-tervező gyerekeknek: ingyenes kalkulátor</title>
+<meta name="description" content="Ingyenes képernyőidő-kalkulátor szülőknek: add meg a gyereked életkorát, órarendjét és lefekvési idejét, és kapsz egy napi korlátot és nyomtatható zárolási tervet.">
+<link rel="canonical" href="{{CANON}}">
+{{HREFLANG}}
+<meta name="theme-color" content="#F2F2F5">
+<meta name="apple-itunes-app" content="app-id={{APP_STORE_ID}}" data-when="launched">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blok">
+<meta property="og:url" content="{{CANON}}">
+<meta property="og:title" content="Képernyőidő-tervező gyerekeknek">
+<meta property="og:image" content="{{BASE}}assets/og-en.jpg">
+<link rel="icon" href="{{ROOT}}assets/favicon.png">
+<link rel="stylesheet" href="{{ROOT}}assets/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Képernyőidő-tervező gyerekeknek",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "isAccessibleForFree": true,
+  "inLanguage": "hu",
+  "url": "{{CANON}}",
+  "publisher": { "@id": "{{BASE}}#org" }
+}
+</script>
+<!--FAQ_JSONLD-->
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../"><img src="{{ROOT}}assets/icon.png" alt="" width="32" height="32">Blok</a>
+    <details class="lang"><summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Nyelv:</span> {{LANG_CODE}}</summary><div class="lang-menu">{{LANG_SWITCH}}</div></details>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Képernyőidő-tervező gyerekeknek</h1>
+  <p class="intro">Add meg a gyereked életkorát, órarendjét és lefekvési idejét. A tervező a svéd Népegészségügyi Hivatal ajánlása alapján megadja a napi képernyőidő-korlátot, és készít egy zárolási tervet az iskolára és az éjszakára, amelyet kinyomtathatsz és kitehetsz a hűtőre.</p>
+
+  <form class="card planner" id="planner">
+    <label>A gyerek életkora <select id="age"><option>6</option><option>7</option><option>8</option><option>9</option><option selected>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option></select></label>
+    <label>Iskola kezdete <input type="time" id="school-start" value="08:00"></label>
+    <label>Iskola vége <input type="time" id="school-end" value="15:00"></label>
+    <label>Lefekvés <input type="time" id="bedtime" value="21:00"></label>
+    <label>Ébredés <input type="time" id="wake" value="07:00"></label>
+    <label>Képernyő ki lefekvés előtt <select id="wind-down"><option value="30" selected>30 perc</option><option value="60">60 perc</option></select></label>
+  </form>
+
+  <div class="card plan" id="plan" aria-live="polite">
+    <h2>A családod képernyőidő-terve</h2>
+    <ul>
+      <li>Szabadidős képernyőidő naponta: <strong id="rec-young">legfeljebb 1–2 óra</strong><strong id="rec-teen" hidden>legfeljebb 2–3 óra</strong></li>
+      <li>Iskolai zárolás, hétköznap: <strong><span id="school">08:00–15:00</span></strong></li>
+      <li>Esti zárolás, minden éjjel: <strong><span id="night">20:30–07:00</span></strong></li>
+      <li>Szabadidő iskola után: <strong><span id="free">5.5</span> óra</strong>, ebből legfeljebb <strong><span id="max">2</span> óra</strong> képernyő előtt</li>
+    </ul>
+    <p id="tip">Ez sok szabadidő. Egy leckeírási zárolás, például az iskola utáni első órában, megkönnyíti a korlát betartását.</p>
+    <p>A Telefon és az Üzenetek minden zárolás alatt elérhető maradhat, hogy a gyereked mindig elérjen.</p>
+    <button type="button" class="btn" id="print">Terv nyomtatása</button>
+  </div>
+
+  <div class="card">
+    <h2>Vidd át a tervet a gyereked iPhone-jára</h2>
+    <p>A Blok: Szülői felügyelet a gyereked iPhone-ján ütemezve zárolja a kiválasztott appokat az iskolai órákra és a lefekvés idejére, vacsorához és leckeíráshoz pedig egy koppintással a saját telefonodról. Nem követ, és nem olvas üzeneteket.</p>
+    <a class="btn" href="{{STORE_URL}}" data-when="launched">Töltsd le a Blokot az App Store-ból</a>
+  </div>
+
+  <div class="card faq">
+    <h2>Gyakori kérdések</h2>
+    <details>
+      <summary>Honnan származnak a képernyőidő-számok?</summary>
+      <p>A Folkhälsomyndighetentől, a svéd Népegészségügyi Hivataltól, 2024: legfeljebb napi 1–2 óra szabadidős képernyőidő a 6–12 éveseknek és 2–3 óra a 13–18 éveseknek. Az iskolai feladatok, a zene, a podcastok és az e-könyvek nem számítanak bele.</p>
+    </details>
+    <details>
+      <summary>Elmentődnek valahol az adataim?</summary>
+      <p>Nem. A tervező teljes egészében a böngésződben fut. Semmit nem küldünk el és nem tárolunk abból, amit beírsz.</p>
+    </details>
+  </div>
+
+  <p class="more-guides">További útmutatók: <a href="screen-time-by-age">Mennyi képernyőidő hány évesen?</a> · <a href="first-iphone-for-child">A gyereked első iPhone-jának beállítása</a> · <a href="best-parental-control-apps-iphone">A legjobb szülői felügyeleti alkalmazások iPhone-ra</a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Blok</span>
+    <a href="../">Kezdőlap</a>
+    <a href="../privacy">Adatvédelmi tájékoztató</a>
+    <a href="../support">Támogatás</a>
+  </div>
+</footer>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const min = id => { const [h, m] = $(id).value.split(":").map(Number); return h * 60 + m; };
+  const clock = m => { m = (m % 1440 + 1440) % 1440; return String(m / 60 | 0).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0"); };
+  const hours = new Intl.NumberFormat(document.documentElement.lang + "-u-nu-latn", { maximumFractionDigits: 1 });
+  function update() {
+    if (["school-start", "school-end", "bedtime", "wake"].some(id => !$(id).value)) return;
+    const teen = +$("age").value >= 13, max = teen ? 3 : 2;
+    const nightStart = min("bedtime") - +$("wind-down").value;
+    const free = Math.max(0, (nightStart - min("school-end") + 1440) % 1440) / 60;
+    $("rec-young").hidden = teen;
+    $("rec-teen").hidden = !teen;
+    $("school").textContent = clock(min("school-start")) + "–" + clock(min("school-end"));
+    $("night").textContent = clock(nightStart) + "–" + clock(min("wake"));
+    $("free").textContent = hours.format(free);
+    $("max").textContent = hours.format(max);
+    $("tip").hidden = free < max + 2;
+  }
+  $("planner").addEventListener("input", update);
+  $("print").addEventListener("click", () => print());
+  update();
+})();
+</script>
+</body>
+</html>

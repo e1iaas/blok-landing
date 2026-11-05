@@ -59,3 +59,14 @@ footer a:hover { color: var(--ink); }
 .faq summary { cursor: pointer; font-weight: 700; padding: 10px 0; }
 .faq details p { color: var(--muted); padding-bottom: 10px; }
 .more-guides { margin-top: 24px; color: var(--muted); }
+.planner { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px 18px; }
+.planner label { display: grid; gap: 6px; font-weight: 700; font-size: 15px; }
+.planner input, .planner select { font: 600 17px var(--font); color: var(--ink); background: var(--canvas); border: 1px solid var(--line); border-radius: 12px; min-height: 48px; padding: 0 12px; }
+.plan ul { list-style: none; padding: 0; }
+.plan li { padding: 8px 0; border-top: 1px solid var(--line); }
+.plan li:first-child { border-top: 0; }
+button.btn { border: 0; cursor: pointer; }
+@media print {
+  header, footer, .planner, .card:not(.plan), .more-guides, .intro, #print { display: none !important; }
+  body, .card { background: #fff; }
+}

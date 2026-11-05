@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-src-only>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Çocuklar İçin Ekran Süresi Planlayıcı: Yaşa Göre Ücretsiz Araç</title>
+<meta name="description" content="Ebeveynler için ücretsiz ekran süresi hesaplayıcı: çocuğunuzun yaşını, okul saatlerini ve yatma saatini girin; günlük sınır ve yazdırılabilir kilit programı alın.">
+<link rel="canonical" href="{{CANON}}">
+{{HREFLANG}}
+<meta name="theme-color" content="#F2F2F5">
+<meta name="apple-itunes-app" content="app-id={{APP_STORE_ID}}" data-when="launched">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blok">
+<meta property="og:url" content="{{CANON}}">
+<meta property="og:title" content="Çocuklar için ekran süresi planlayıcı">
+<meta property="og:image" content="{{BASE}}assets/og-en.jpg">
+<link rel="icon" href="{{ROOT}}assets/favicon.png">
+<link rel="stylesheet" href="{{ROOT}}assets/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Çocuklar için ekran süresi planlayıcı",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "isAccessibleForFree": true,
+  "inLanguage": "tr",
+  "url": "{{CANON}}",
+  "publisher": { "@id": "{{BASE}}#org" }
+}
+</script>
+<!--FAQ_JSONLD-->
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../"><img src="{{ROOT}}assets/icon.png" alt="" width="32" height="32">Blok</a>
+    <details class="lang"><summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Dil:</span> {{LANG_CODE}}</summary><div class="lang-menu">{{LANG_SWITCH}}</div></details>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Çocuklar için ekran süresi planlayıcı</h1>
+  <p class="intro">Çocuğunuzun yaşını, okul saatlerini ve yatma saatini girin. Planlayıcı, İsveç Halk Sağlığı Kurumu'nun önerilerine dayanan günlük bir ekran süresi sınırı ve okul ile yatma saati için yazdırıp buzdolabına asabileceğiniz bir kilit programı hazırlar.</p>
+
+  <form class="card planner" id="planner">
+    <label>Çocuğun yaşı <select id="age"><option>6</option><option>7</option><option>8</option><option>9</option><option selected>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option></select></label>
+    <label>Okul başlangıcı <input type="time" id="school-start" value="08:00"></label>
+    <label>Okul bitişi <input type="time" id="school-end" value="15:00"></label>
+    <label>Yatma saati <input type="time" id="bedtime" value="21:00"></label>
+    <label>Kalkış saati <input type="time" id="wake" value="07:00"></label>
+    <label>Yatmadan önce ekransız süre <select id="wind-down"><option value="30" selected>30 dk</option><option value="60">60 dk</option></select></label>
+  </form>
+
+  <div class="card plan" id="plan" aria-live="polite">
+    <h2>Ailenizin ekran süresi planı</h2>
+    <ul>
+      <li>Günlük boş zaman ekran süresi: <strong id="rec-young">en fazla 1–2 saat</strong><strong id="rec-teen" hidden>en fazla 2–3 saat</strong></li>
+      <li>Okul kilidi, hafta içi: <strong><span id="school">08:00–15:00</span></strong></li>
+      <li>Gece kilidi, her gece: <strong><span id="night">20:30–07:00</span></strong></li>
+      <li>Okuldan sonra boş zaman: <strong><span id="free">5,5</span> saat</strong>, bunun en fazla <strong><span id="max">2</span> saati</strong> ekranda</li>
+    </ul>
+    <p id="tip">Bu oldukça fazla boş zaman. Örneğin okuldan sonraki ilk saat için bir ödev kilidi, sınıra uymayı kolaylaştırır.</p>
+    <p>Telefon ve Mesajlar her kilit sırasında açık kalabilir; böylece çocuğunuz size her zaman ulaşabilir.</p>
+    <button type="button" class="btn" id="print">Planı yazdır</button>
+  </div>
+
+  <div class="card">
+    <h2>Planı çocuğunuzun iPhone'una taşıyın</h2>
+    <p>Blok: Ebeveyn Denetimi, seçtiğiniz uygulamaları çocuğunuzun iPhone'unda okul ve yatma saati programlarıyla, akşam yemeği ve ödev için de kendi telefonunuzdan tek dokunuşla kilitler. Takip yapmaz, mesaj okumaz.</p>
+    <a class="btn" href="{{STORE_URL}}" data-when="launched">Blok'u App Store'dan indirin</a>
+  </div>
+
+  <div class="card faq">
+    <h2>Sorular</h2>
+    <details>
+      <summary>Ekran süresi rakamları nereden geliyor?</summary>
+      <p>İsveç Halk Sağlığı Kurumu Folkhälsomyndigheten'den, 2024: 6–12 yaş için günde en fazla 1–2 saat, 13–18 yaş için 2–3 saat boş zaman ekran süresi. Okul ödevleri, müzik, podcast'ler ve e-kitaplar sayılmaz.</p>
+    </details>
+    <details>
+      <summary>Verilerim bir yere kaydediliyor mu?</summary>
+      <p>Hayır. Planlayıcı tamamen tarayıcınızda çalışır. Girdiğiniz hiçbir şey gönderilmez veya saklanmaz.</p>
+    </details>
+  </div>
+
+  <p class="more-guides">Diğer rehberler: <a href="screen-time-by-age">Yaşa göre ekran süresi ne kadar olmalı?</a> · <a href="first-iphone-for-child">Çocuğunuzun ilk iPhone'unu kurma</a> · <a href="best-parental-control-apps-iphone">iPhone için en iyi ebeveyn kontrol uygulamaları</a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Blok</span>
+    <a href="../">Ana sayfa</a>
+    <a href="../privacy">Gizlilik Politikası</a>
+    <a href="../support">Destek</a>
+  </div>
+</footer>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const min = id => { const [h, m] = $(id).value.split(":").map(Number); return h * 60 + m; };
+  const clock = m => { m = (m % 1440 + 1440) % 1440; return String(m / 60 | 0).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0"); };
+  const hours = new Intl.NumberFormat(document.documentElement.lang + "-u-nu-latn", { maximumFractionDigits: 1 });
+  function update() {
+    if (["school-start", "school-end", "bedtime", "wake"].some(id => !$(id).value)) return;
+    const teen = +$("age").value >= 13, max = teen ? 3 : 2;
+    const nightStart = min("bedtime") - +$("wind-down").value;
+    const free = Math.max(0, (nightStart - min("school-end") + 1440) % 1440) / 60;
+    $("rec-young").hidden = teen;
+    $("rec-teen").hidden = !teen;
+    $("school").textContent = clock(min("school-start")) + "–" + clock(min("school-end"));
+    $("night").textContent = clock(nightStart) + "–" + clock(min("wake"));
+    $("free").textContent = hours.format(free);
+    $("max").textContent = hours.format(max);
+    $("tip").hidden = free < max + 2;
+  }
+  $("planner").addEventListener("input", update);
+  $("print").addEventListener("click", () => print());
+  update();
+})();
+</script>
+</body>
+</html>
