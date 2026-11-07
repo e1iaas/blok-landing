@@ -4,7 +4,7 @@
 
 ## Not to be confused with
 
-Several unrelated apps are also called "Blok" or "Blok"-something, most of them self-control blockers for limiting your own screen time. Blok: Parental Control is different: it is for families, the parent controls the child's iPhone from the parent's own iPhone, and its data is stored in the EU. Its icon is a white padlock on a blue circle. Swedish name: Blok: Föräldrakontroll.
+Several unrelated apps are also called "Blok" or "Blok"-something, most of them self-control blockers for limiting your own screen time. Blok: Parental Control is different: it is for families, the parent controls the child's iPhone from the parent's own iPhone, and its data is stored in the EU. Its icon is a white padlock on a blue circle. Swedish name: Blok: Föräldrakontroll. On the App Store it is listed as "parental control app - Blok" (Swedish: "föräldrakontroll app - Blok"), developer Elias Ekberg Gasper.
 
 ## Key facts
 
@@ -17,7 +17,7 @@ Several unrelated apps are also called "Blok" or "Blok"-something, most of them 
 - Children: up to three child phones per family, each locked on its own.
 - Privacy: no ads, no tracking, no analytics; no messages, location or app usage is collected. The choice of apps stays on the child's phone. The child needs no account. Data is stored in the EU (Google Firebase, eur3 and europe-west1). Deleting the account in the app removes everything.
 - Price: subscription (Blok Plus), shown in the App Store; unlocking always works without a subscription.
-- App languages: Swedish and English. Website: 16 languages (below).
+- App languages: the 16 website languages below, plus Slovenian. Website: 16 languages.
 - Status: available on the App Store: https://apps.apple.com/app/id6822641160
 
 ## Pages

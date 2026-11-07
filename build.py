@@ -255,7 +255,7 @@ def finish_jsonld(out, lang, translate, page):
         data = walk(json.loads(match.group(2)))
         for node in data.get("@graph", []):
             if node.get("@type") == "MobileApplication":
-                node["inLanguage"] = list(SOURCE_LANGS)          # the app's own languages
+                node["inLanguage"] = list(LANGS) + ["sl"]       # the app's own languages (the site's plus Slovenian)
                 if APP_STORE_ID:
                     node["downloadUrl"] = node["installUrl"] = store_url(lang)
                     node["sameAs"] = [store_url(lang)]
