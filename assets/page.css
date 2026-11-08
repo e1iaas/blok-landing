@@ -66,7 +66,15 @@ footer a:hover { color: var(--ink); }
 .plan li { padding: 8px 0; border-top: 1px solid var(--line); }
 .plan li:first-child { border-top: 0; }
 button.btn { border: 0; cursor: pointer; }
+.contract .who { font-weight: 700; font-size: 19px; }
+.rules { list-style: none; padding: 0 !important; margin: 10px 0; }
+.rules li { border-top: 1px solid var(--line); padding: 6px 0; }
+.rules label { display: flex; gap: 10px; align-items: baseline; cursor: pointer; }
+.rules input { width: 18px; height: 18px; flex: none; accent-color: var(--plum); }
+.rules li.off { color: var(--muted); }
+.signatures { display: flex; gap: 18px; margin-top: 36px !important; }
+.signatures span { flex: 1; border-top: 1px solid var(--ink); padding-top: 4px; font-size: 14px; color: var(--muted); }
 @media print {
-  header, footer, .planner, .card:not(.plan), .more-guides, .intro, #print { display: none !important; }
+  header, footer, h1, .planner, .card:not(.plan):not(.contract), .more-guides, .intro, #print, .rules li.off, .rules input { display: none !important; }
   body, .card { background: #fff; }
 }

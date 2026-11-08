@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-src-only>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puhelinsopimus lapselle: ilmainen pohja tulostettavaksi</title>
+<meta name="description" content="Tee perheen puhelinsopimus kahdessa minuutissa: valitse lapsellesi sopivat puhelinsäännöt, lisää nimet ja tulosta. Ilmainen sopimuspohja lapsille ja nuorille.">
+<link rel="canonical" href="{{CANON}}">
+{{HREFLANG}}
+<meta name="theme-color" content="#F2F2F5">
+<meta name="apple-itunes-app" content="app-id={{APP_STORE_ID}}" data-when="launched">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blok">
+<meta property="og:url" content="{{CANON}}">
+<meta property="og:title" content="Puhelinsopimus lapselle: ilmainen sopimuspohja">
+<meta property="og:image" content="{{BASE}}assets/og-en.jpg">
+<link rel="icon" href="{{ROOT}}assets/favicon.png">
+<link rel="stylesheet" href="{{ROOT}}assets/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Puhelinsopimus lapselle: ilmainen sopimuspohja",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "isAccessibleForFree": true,
+  "inLanguage": "fi",
+  "url": "{{CANON}}",
+  "publisher": { "@id": "{{BASE}}#org" }
+}
+</script>
+<!--FAQ_JSONLD-->
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../"><img src="{{ROOT}}assets/icon.png" alt="" width="32" height="32">Blok</a>
+    <details class="lang"><summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Kieli:</span> {{LANG_CODE}}</summary><div class="lang-menu">{{LANG_SWITCH}}</div></details>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Puhelinsopimus lapselle</h1>
+  <p class="intro">Perheen puhelinsopimus on vanhempien ja lapsen lyhyt kirjallinen sopimus siitä, miten puhelinta käytetään: milloin, missä ja mitä tapahtuu, jos sääntöä rikotaan. Valitse alta perheellenne sopivat säännöt, lisää nimet ja tulosta. Sääntöjä, joiden valitsemiseen lapsi on itse osallistunut, on helpompi noudattaa.</p>
+
+  <form class="card planner" id="contract-form">
+    <label>Lapsen nimi <input type="text" id="child" autocomplete="off"></label>
+    <label>Vanhempien nimet <input type="text" id="parents" autocomplete="off"></label>
+  </form>
+
+  <div class="card contract" id="contract">
+    <h2>Meidän puhelinsopimuksemme</h2>
+    <p class="who"><span id="child-out">[Lapsi]</span> &amp; <span id="parents-out">[Vanhemmat]</span></p>
+    <ul class="rules">
+      <li><label><input type="checkbox" checked> Ei puhelimia ruokapöydässä, ei kenelläkään.</label></li>
+      <li><label><input type="checkbox" checked> Puhelin latautuu yöllä makuuhuoneen ulkopuolella.</label></li>
+      <li><label><input type="checkbox" checked> Ensin läksyt, sitten puhelin.</label></li>
+      <li><label><input type="checkbox" checked> Kysyn luvan ennen kuin lataan uuden sovelluksen tai pelin.</label></li>
+      <li><label><input type="checkbox" checked> Vastaan, kun vanhempani soittavat tai lähettävät viestin.</label></li>
+      <li><label><input type="checkbox" checked> Kerron vanhemmalle, jos jokin netissä saa minut tuntemaan oloni pahaksi tai pelokkaaksi. En joudu vaikeuksiin siitä, että kerron.</label></li>
+      <li><label><input type="checkbox" checked> En jaa salasanoja, osoitettani tai kuvia itsestäni ihmisille, joita en tunne.</label></li>
+      <li><label><input type="checkbox"> Lähetän vain viestejä, jotka kuka tahansa saisi lukea.</label></li>
+      <li><label><input type="checkbox"> En kuvaa tai valokuvaa ketään kysymättä ensin.</label></li>
+      <li><label><input type="checkbox"> Ei puhelinta kylpyhuoneessa.</label></li>
+      <li><label><input type="checkbox"> Viikonloppuisin puhelin on pois päältä, kunnes aamupala on syöty.</label></li>
+      <li><label><input type="checkbox"> Vanhempani saavat lukita pelit ja sosiaalisen median sovittuina aikoina.</label></li>
+      <li><label><input type="checkbox"> Myös vanhempani laittavat puhelimensa pois ruokaillessa ja kun juttelemme.</label></li>
+      <li><label><input type="checkbox" checked> Jos sääntöä rikotaan, puhumme siitä, ja puhelin voi pitää päivän tauon.</label></li>
+    </ul>
+    <p>Katsomme tämän sopimuksen uudelleen kolmen kuukauden päästä ja muutamme sitä yhdessä, jos tarvitsee.</p>
+    <p class="signatures"><span>Lapsi</span><span>Vanhempi</span><span>Päivämäärä</span></p>
+    <button type="button" class="btn" id="print">Tulosta sopimus</button>
+  </div>
+
+  <div class="card">
+    <h2>Tee sovituista ajoista automaattisia</h2>
+    <p>Sääntöjä kuten ”ei puhelinta päivällisellä” ja ”puhelin nukkuu yöllä” on helpompi noudattaa, kun kenenkään ei tarvitse sanoa ei. Blok: Lapsilukko lukitsee sovitut sovellukset koulun ja nukkumaanmenon aikatauluilla sekä päivällisellä yhdellä napautuksella puhelimestasi. Ei seurantaa, eikä Blok lue viestejä.</p>
+    <a class="btn" href="{{STORE_URL}}" data-when="launched">Lataa Blok App Storesta</a>
+  </div>
+
+  <div class="card faq">
+    <h2>Kysymyksiä</h2>
+    <details>
+      <summary>Mitä lapsen puhelinsopimukseen kannattaa kirjata?</summary>
+      <p>Missä ja milloin puhelinta käytetään, mitä tehdään ennen sovellusten lataamista, turvallisuussäännöt vieraista ihmisistä ja henkilötiedoista, lupaus kertoa vanhemmalle, kun jokin tuntuu väärältä, ja mitä tapahtuu, jos sääntöä rikotaan. Pidä se niin lyhyenä, että sen muistaa.</p>
+    </details>
+    <details>
+      <summary>Minkä ikäisenä puhelinsopimus kannattaa tehdä?</summary>
+      <p>Kun lapsesi saa ensimmäisen puhelimensa, usein 9–12-vuotiaana. Käykää sopimus läpi muutaman kuukauden välein ja antakaa lisää vapautta sitä mukaa, kun lapsi näyttää pärjäävänsä.</p>
+    </details>
+    <details>
+      <summary>Tallentuuko kirjoittamani jonnekin?</summary>
+      <p>Ei. Sopimuspohja toimii kokonaan selaimessasi. Mitään syöttämääsi ei lähetetä eikä tallenneta.</p>
+    </details>
+  </div>
+
+  <p class="more-guides">Lisää oppaita: <a href="screen-time-planner">Ruutuaikasuunnittelija</a> · <a href="first-iphone-for-child">Lapsen ensimmäisen iPhonen käyttöönotto</a> · <a href="lock-iphone-at-night">Näin lukitset lapsen iPhonen yöksi</a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Blok</span>
+    <a href="../">Etusivu</a>
+    <a href="../privacy">Tietosuojaseloste</a>
+    <a href="../support">Tuki</a>
+  </div>
+</footer>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  for (const id of ["child", "parents"]) {
+    const out = $(id + "-out"), blank = out.textContent;
+    $(id).addEventListener("input", () => { out.textContent = $(id).value.trim() || blank; });
+  }
+  // Unticked rules stay on screen to choose from, but are left off the printout.
+  $("contract").addEventListener("change", e => e.target.closest("li").classList.toggle("off", !e.target.checked));
+  document.querySelectorAll(".rules input:not(:checked)").forEach(i => i.closest("li").classList.add("off"));
+  $("print").addEventListener("click", () => print());
+})();
+</script>
+</body>
+</html>

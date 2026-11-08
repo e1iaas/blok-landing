@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-src-only>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Telefonszerződés gyerekeknek: ingyenes, nyomtatható sablon</title>
+<meta name="description" content="Családi telefonszerződés két perc alatt: válaszd ki a gyerekedhez illő szabályokat, írd be a neveket, és nyomtasd ki. Ingyenes sablon gyerekeknek, kamaszoknak.">
+<link rel="canonical" href="{{CANON}}">
+{{HREFLANG}}
+<meta name="theme-color" content="#F2F2F5">
+<meta name="apple-itunes-app" content="app-id={{APP_STORE_ID}}" data-when="launched">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blok">
+<meta property="og:url" content="{{CANON}}">
+<meta property="og:title" content="Telefonszerződés gyerekeknek: ingyenes sablonkészítő">
+<meta property="og:image" content="{{BASE}}assets/og-en.jpg">
+<link rel="icon" href="{{ROOT}}assets/favicon.png">
+<link rel="stylesheet" href="{{ROOT}}assets/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Telefonszerződés gyerekeknek: ingyenes sablonkészítő",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "isAccessibleForFree": true,
+  "inLanguage": "hu",
+  "url": "{{CANON}}",
+  "publisher": { "@id": "{{BASE}}#org" }
+}
+</script>
+<!--FAQ_JSONLD-->
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../"><img src="{{ROOT}}assets/icon.png" alt="" width="32" height="32">Blok</a>
+    <details class="lang"><summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Nyelv:</span> {{LANG_CODE}}</summary><div class="lang-menu">{{LANG_SWITCH}}</div></details>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Telefonszerződés gyerekeknek</h1>
+  <p class="intro">A családi telefonszerződés egy rövid, írásos megállapodás a szülők és a gyerek között a telefonhasználatról: mikor, hol, és mi történik, ha valaki megszeg egy szabályt. Válaszd ki lent a családodhoz illő szabályokat, írd be a neveiteket, és nyomtasd ki. Azokat a szabályokat, amelyek kiválasztásában a gyereked is részt vett, könnyebb betartani.</p>
+
+  <form class="card planner" id="contract-form">
+    <label>A gyerek neve <input type="text" id="child" autocomplete="off"></label>
+    <label>A szülők neve <input type="text" id="parents" autocomplete="off"></label>
+  </form>
+
+  <div class="card contract" id="contract">
+    <h2>A telefonos megállapodásunk</h2>
+    <p class="who"><span id="child-out">[Gyerek]</span> &amp; <span id="parents-out">[Szülők]</span></p>
+    <ul class="rules">
+      <li><label><input type="checkbox" checked> Étkezésnél senkinél nincs telefon az asztalnál.</label></li>
+      <li><label><input type="checkbox" checked> Éjszaka a telefon a hálószobán kívül töltődik.</label></li>
+      <li><label><input type="checkbox" checked> Előbb a lecke, aztán a telefon.</label></li>
+      <li><label><input type="checkbox" checked> Mielőtt új appot vagy játékot töltök le, megkérdezem a szüleimet.</label></li>
+      <li><label><input type="checkbox" checked> Felveszem, ha a szüleim hívnak, és válaszolok, ha írnak.</label></li>
+      <li><label><input type="checkbox" checked> Szólok egy szülőnek, ha valami az interneten rosszul esik vagy megijeszt. Azért, mert szólok, nem kapok büntetést.</label></li>
+      <li><label><input type="checkbox" checked> Nem osztom meg a jelszavaimat, a lakcímemet vagy a fotóimat olyanokkal, akiket nem ismerek.</label></li>
+      <li><label><input type="checkbox"> Csak olyan üzenetet küldök, amelyet nyugodtan elolvashatna bárki.</label></li>
+      <li><label><input type="checkbox"> Senkit nem filmezek vagy fényképezek le anélkül, hogy előtte megkérdezném.</label></li>
+      <li><label><input type="checkbox"> A fürdőszobában nincs telefon.</label></li>
+      <li><label><input type="checkbox"> Hétvégén a telefon a reggeli végéig ki van kapcsolva.</label></li>
+      <li><label><input type="checkbox"> A szüleim a megbeszélt időpontokban zárolhatják a játékokat és a közösségi médiát.</label></li>
+      <li><label><input type="checkbox"> A szüleim is elteszik a telefonjukat étkezésnél és amikor beszélgetünk.</label></li>
+      <li><label><input type="checkbox" checked> Ha valaki megszeg egy szabályt, megbeszéljük, és a telefon egy napra pihenőt kaphat.</label></li>
+    </ul>
+    <p>Három hónap múlva újra átnézzük ezt a megállapodást, és ha kell, közösen módosítjuk.</p>
+    <p class="signatures"><span>Gyerek</span><span>Szülő</span><span>Dátum</span></p>
+    <button type="button" class="btn" id="print">Megállapodás nyomtatása</button>
+  </div>
+
+  <div class="card">
+    <h2>Legyenek automatikusak a megbeszélt időpontok</h2>
+    <p>Az olyan szabályokat, mint a „vacsoránál nincs telefon” és az „éjjel a telefon is alszik”, könnyebb betartani, ha senkinek sem kell nemet mondania. A Blok: Szülői felügyelet a megbeszélt appokat ütemezve zárolja az iskolai órákra és a lefekvés idejére, vacsoránál pedig egy koppintással a saját telefonodról. Nem követ, és nem olvas üzeneteket.</p>
+    <a class="btn" href="{{STORE_URL}}" data-when="launched">Töltsd le a Blokot az App Store-ból</a>
+  </div>
+
+  <div class="card faq">
+    <h2>Gyakori kérdések</h2>
+    <details>
+      <summary>Mit tartalmazzon egy telefonszerződés gyerekeknek?</summary>
+      <p>Hol és mikor használható a telefon, mi a teendő appletöltés előtt, biztonsági szabályok az idegenekről és a személyes adatokról, ígéret, hogy a gyerek szól egy szülőnek, ha valami nincs rendben, és hogy mi történik, ha megszeg egy szabályt. Legyen elég rövid ahhoz, hogy meg lehessen jegyezni.</p>
+    </details>
+    <details>
+      <summary>Hány évesen érdemes telefonszerződést kötni?</summary>
+      <p>Amikor a gyereked megkapja az első telefonját, gyakran 9 és 12 éves kora között. Néhány havonta nézzétek át, és adj több szabadságot, ahogy a gyereked megmutatja, hogy boldogul vele.</p>
+    </details>
+    <details>
+      <summary>Elmentődik bármi abból, amit beírok?</summary>
+      <p>Nem. A sablonkészítő teljes egészében a böngésződben fut. Semmit nem küldünk el és nem tárolunk abból, amit beírsz.</p>
+    </details>
+  </div>
+
+  <p class="more-guides">További útmutatók: <a href="screen-time-planner">Képernyőidő-tervező</a> · <a href="first-iphone-for-child">A gyereked első iPhone-jának beállítása</a> · <a href="lock-iphone-at-night">Hogyan zárolhatod éjszakára gyereked iPhone-ját?</a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Blok</span>
+    <a href="../">Kezdőlap</a>
+    <a href="../privacy">Adatvédelmi tájékoztató</a>
+    <a href="../support">Támogatás</a>
+  </div>
+</footer>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  for (const id of ["child", "parents"]) {
+    const out = $(id + "-out"), blank = out.textContent;
+    $(id).addEventListener("input", () => { out.textContent = $(id).value.trim() || blank; });
+  }
+  // Unticked rules stay on screen to choose from, but are left off the printout.
+  $("contract").addEventListener("change", e => e.target.closest("li").classList.toggle("off", !e.target.checked));
+  document.querySelectorAll(".rules input:not(:checked)").forEach(i => i.closest("li").classList.add("off"));
+  $("print").addEventListener("click", () => print());
+})();
+</script>
+</body>
+</html>
